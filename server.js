@@ -290,7 +290,7 @@ app.get("/api/persons/:id", (req, res) => {
 });
 
 // Add new
-app.post("/api/persons", (req, res) => {
+app.post("/api/persons", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
   m.personAdd(req.body)
     .then((data) => {
@@ -303,7 +303,7 @@ app.post("/api/persons", (req, res) => {
 });
 
 // Edit existing, add claim or role
-app.put("/api/persons/:id", (req, res) => {
+app.put("/api/persons/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
   m.personEdit(req.body)
     .then((data) => {
@@ -316,7 +316,7 @@ app.put("/api/persons/:id", (req, res) => {
 });
 
 // Delete item
-app.delete("/api/persons/:id", (req, res) => {
+app.delete("/api/persons/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
   m.personDelete(req.params.id)
     .then(() => {
@@ -328,7 +328,7 @@ app.delete("/api/persons/:id", (req, res) => {
 });
 
 // Get all active alerts
-app.get("/api/alerts", (req, res) => {
+app.get("/api/alerts", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
   m.alertGetAllActive()
     .then((data) => {
@@ -341,7 +341,7 @@ app.get("/api/alerts", (req, res) => {
 });
 
 // Get one
-app.get("/api/alerts/:id", (req, res) => {
+app.get("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
   m.alertGetById(req.params.id)
     .then((data) => {
@@ -353,14 +353,45 @@ app.get("/api/alerts/:id", (req, res) => {
     })
 });
 
-//Get Some
 
-//all protected
-//Add new
+// Add new
+app.post("/api/alerts", passport.authenticate('jwt', { session: false }), (req, res) => {
+  // Call the manager method
+  m.alertAdd(req.body)
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/alerts'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
 
-//edit existing
+// Edit existing, add claim or role
+app.put("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  // Call the manager method
+  m.alertEdit(req.body)
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/alerts'));
+    })
+    .catch(() => {
+      res.status(404).json({ "message": "Resource not found" });
+    })
+});
 
-//delete
+// Delete item
+app.delete("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  // Call the manager method
+  m.alertDelete(req.params.id)
+    .then(() => {
+      res.status(204).end();
+    })
+    .catch(() => {
+      res.status(404).json({ "message": "Resource not found" });
+    })
+});
+
 
 
 

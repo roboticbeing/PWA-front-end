@@ -404,13 +404,53 @@ module.exports = function () {
       })
     },
 
-    //alertGetSome:
+    alertAdd: function (newItem) {
+      return new Promise(function (resolve, reject) {
 
-    //createProtectedAlert
+        Alerts.create(newItem, (error, item) => {
+          if (error) {
+            // Cannot add item
+            return reject(error.message);
+          }
+          //Added object will be returned
+          return resolve(item);
+        });
+      })
+    },
 
-    //edit existing
-  
-    //deactivate or delete, protected
+    alertEdit: function (newItem) {
+      return new Promise(function (resolve, reject) {
+
+        Alerts.findByIdAndUpdate(newItem._id, newItem, { new: true }, (error, item) => {
+          if (error) {
+            // Cannot edit item
+            return reject(error.message);
+          }
+          // Check for an item
+          if (item) {
+            // Edited object will be returned
+            return resolve(item);
+          } else {
+            return reject('Not found');
+          }
+
+        });
+      })
+    },
+
+    alertDelete: function (itemId) {
+      return new Promise(function (resolve, reject) {
+
+        Alerts.findByIdAndRemove(itemId, (error) => {
+          if (error) {
+            // Cannot delete item
+            return reject(error.message);
+          }
+          // Return success, but don't leak info
+          return resolve();
+        })
+      })
+    },
 
     textContentGetAll: function () {
       return new Promise(function (resolve, reject) {
