@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Card from '../Components/Card';
 import FeedItem from '../Components/FeedItem';
+import CreateNews from '../Components/CreateNews';
 
 
 class ComponentsOverview extends Component {
@@ -30,6 +31,11 @@ class ComponentsOverview extends Component {
         </FeedItem>
       </Card>
       
+      <hr/>
+      <h1>CreateNews</h1>
+      <Card>
+          <CreateNews/>
+      </Card>
 
     </div>
     
