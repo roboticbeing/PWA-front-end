@@ -1,0 +1,11 @@
+
+[{"shortName":"Brief name of the item", "category":"news", "dateCreated": "2019-07-01T04:48:11Z", "dateExpired": "2019-07-21T20:15:38Z",
+    "targetCountry": "RU", "targetRegion":"Nizhnevartovsk", "visibilty":[], "content": "<p>Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.</p>"},
+    
+{"shortName":"Brief name of the item", "category":"event", "dateCreated": "2019-06-22T15:09:40Z", "dateExpired": "2019-06-25T15:09:40Z",
+        "targetCountry": "SE", "targetRegion":"Svalöv", "visibilty":[], "content": "<p>Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.</p>"},
+
+{"shortName":"Brief name of the item", "category":"notice", "dateCreated": "2018-08-21T14:35:42Z", "dateExpired": "2018-09-21T15:46:49Z",
+    "targetCountry": "CN", "targetRegion":"Kuleqi", "visibilty":["contentEditor"], "content": "<p>Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.</p>"}] 
+    
+
