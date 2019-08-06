@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Card from '../Components/Card';
 import FeedItem from '../Components/FeedItem';
 import CreateNews from '../Components/CreateNews';
+import Navigation from '../Components/Navigation';
 
 
 class ComponentsOverview extends Component {
@@ -11,6 +12,10 @@ class ComponentsOverview extends Component {
     <div >
       <h1>Components Overview</h1>
       
+      <hr/>
+      <h1>Navigation</h1>
+          <Navigation/>
+
       <hr/>
       <h1>Card</h1>
       <Card>My card</Card>
@@ -36,7 +41,7 @@ class ComponentsOverview extends Component {
       <Card>
           <CreateNews/>
       </Card>
-
+      
     </div>
     
     );

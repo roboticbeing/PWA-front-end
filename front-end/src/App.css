@@ -8,6 +8,7 @@
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+  -webkit-animation: App-logo-spin infinite 20s linear;
 }
 
 .App-header {
@@ -34,6 +35,7 @@
   }
 }
 
+
 /* Global CSS ------------------------ */
 
 hr{
@@ -53,6 +55,48 @@ input[type=submit], button {
   padding:8px 32px;
   cursor: pointer;
 }
+
+/* Navigation ------------------------ */
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+.nav-menu-button{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+  
+  .nav-menu-button{
+    display: list-item;;
+  }
+  .menu-hidden{
+    display: none;
+  }
+}
+
 
 /* Card ------------------------ */
 
