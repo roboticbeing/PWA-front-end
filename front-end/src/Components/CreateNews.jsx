@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 export default class CreateNews extends Component {
+    state = {
+        hasExpiration: false
+    };
+    
   render() {
     return <div>
 
@@ -19,17 +23,26 @@ export default class CreateNews extends Component {
 
         <fieldset>
             <legend>News Expiration Date</legend>
-            
-                <input type="checkbox" id="hasExpiration" /> <label for="hasExpiration" className='pointer'>Has Expiration Date </label>
+            <label className='pointer'>
+                <input type="checkbox" id="hasExpiration" checked={this.state.hasExpiration} onChange={this.checkboxHandle} /> Has Expiration Date </label>
            
         <div>Date</div>
 
-            <input type="datetime-local"/>
+            <input type="datetime-local" disabled={!this.state.hasExpiration}/>
 
         </fieldset>
 
         <input type="submit" value="Create News"/>
 
     </div>
+  }
+
+  // Methods -------------------------------
+  checkboxHandle = () => {
+      this.setState(
+          {
+            hasExpiration: (! this.state.hasExpiration )
+        }
+    )
   }
 }
