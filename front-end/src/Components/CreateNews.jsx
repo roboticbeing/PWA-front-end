@@ -28,7 +28,7 @@ export default class CreateNews extends Component {
 
         </fieldset>
 
-        <input type="submit"/>
+        <input type="submit" value="Create News"/>
 
     </div>
   }
