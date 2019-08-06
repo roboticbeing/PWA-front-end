@@ -1,6 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
+import Header from './Pages/Header';
+
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Register from './Pages/Register';
@@ -16,24 +18,27 @@ import PeopleList from './Pages/PeopleList';
 const Router = () =>  {
     return (
       <BrowserRouter>
-        <Switch>
+        <div>
+          <Header title="MOVES"/>
+          <Switch>
 
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          {/* When user click activate account in email */}
-          <Route path="/account-activation" component={AccountActivation} />
+            <Route exact path="/" component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            {/* When user click activate account in email */}
+            <Route path="/account-activation" component={AccountActivation} />
 
-          <Route path="/settings" component={Settings} />
+            <Route path="/settings" component={Settings} />
 
-          <Route path="/location" component={Location} />
-          <Route path="/emergency" component={Emergency} />
-          <Route path="/alerts" component={Alerts} />
-          <Route path="/people-list" component={PeopleList} />
-          {/* Inbound Communication (news, announcements) */}
-          <Route path="/feed" component={Feed} />
+            <Route path="/location" component={Location} />
+            <Route path="/emergency" component={Emergency} />
+            <Route path="/alerts" component={Alerts} />
+            <Route path="/people-list" component={PeopleList} />
+            {/* Inbound Communication (news, announcements) */}
+            <Route path="/feed" component={Feed} />
 
-        </Switch>
+          </Switch>
+        </div>
       </BrowserRouter>
     );
   }
