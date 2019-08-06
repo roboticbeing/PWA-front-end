@@ -31,3 +31,59 @@
     transform: rotate(360deg);
   }
 }
+
+hr{
+  margin: 32px 0px; 
+}
+
+.Card{
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  padding:8px;
+  margin: 8px 16px;
+  box-sizing: content-box;
+  border: 1px solid #cfcfcf;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.FeedItemAutorAndBtnContainer{
+  height: auto;
+  overflow: hidden;
+}
+.FeedItemAuthor{
+  width: auto;
+  overflow: hidden;
+}
+.FeedItemName{
+  font-weight: bold;
+  font-size: 80%;
+}
+.FeedItemDate{
+  font-size: 66%;
+  color: grey;
+  margin-top: 4px;
+}
+.FeedItemBtnArea{
+  width: 32px;
+  float: right;
+}
+.FeedItemBtn{
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  border-radius: 50%;
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+.FeedItemBtn:hover{
+  background-color: #38A1F3;
+  color:white  !important;;
+}
+.FeedItemContent{
+  display: block;
+  width: 100%;
+  margin: 16px 0px 8px;
+}
