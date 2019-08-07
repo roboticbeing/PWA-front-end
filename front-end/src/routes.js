@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
-import Header from './Pages/Header';
+import Navigation from './Components/Navigation';
 
 import Login from './Pages/Login';
 import Home from './Pages/Home';
@@ -21,7 +21,7 @@ const Router = () =>  {
     return (
       <BrowserRouter>
         <div>
-          <Header title="MOVES"/>
+        <Navigation/>
           <Switch>
 
             <Route exact path="/" component={Home} />
