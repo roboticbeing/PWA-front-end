@@ -37,7 +37,7 @@ Import the user account starter data:
 > Replace `databasename` with the name that you used above. 
 
 ```bash
-mongoimport --db databasename --collection useraccounts --file dbdata-useraccounts.json --jsonArray
+mongoimport --db dps945 --collection persons --file dbdata-persons.json --jsonArray
 ```
 
 Import the (cars) example starter data:

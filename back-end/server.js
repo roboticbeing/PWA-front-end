@@ -249,7 +249,6 @@ app.get('/api/security/testrole2andoulocation1', passport.authenticate('jwt', { 
 // ################################################################################
 // Request handlers for data entities (listeners)
 
-
 // Get all
 app.get("/api/persons", (req, res) => {
   // Call the manager method
@@ -327,8 +326,21 @@ app.delete("/api/persons/:id", passport.authenticate('jwt', { session: false }),
     })
 });
 
+// Get all alerts
+app.get("/api/alerts",  (req, res) => {
+  // Call the manager method
+  m.alertGetAll()
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/alerts'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
 // Get all active alerts
-app.get("/api/alerts", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get("/api/alerts/active",  (req, res) => {
   // Call the manager method
   m.alertGetAllActive()
     .then((data) => {
@@ -340,8 +352,9 @@ app.get("/api/alerts", passport.authenticate('jwt', { session: false }), (req, r
     })
 });
 
+
 // Get one
-app.get("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get("/api/alerts/:id", (req, res) => {
   // Call the manager method
   m.alertGetById(req.params.id)
     .then((data) => {
@@ -384,6 +397,71 @@ app.put("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (re
 app.delete("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
   m.alertDelete(req.params.id)
+    .then(() => {
+      res.status(204).end();
+    })
+    .catch(() => {
+      res.status(404).json({ "message": "Resource not found" });
+    })
+});
+
+// Get all text content
+app.get("/api/textcontent",  (req, res) => {
+  // Call the manager method
+  m.textContentGetAll()
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/textcontent'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+// Get one
+app.get("/api/textcontent/:id", (req, res) => {
+  // Call the manager method
+  m.textContentById(req.params.id)
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/textcontent'));
+    })
+    .catch(() => {
+      res.status(404).json({ "message": "Resource not found" });
+    })
+});
+
+
+// Add new
+app.post("/api/textcontent", passport.authenticate('jwt', { session: false }), (req, res) => {
+  // Call the manager method
+  m.textContentAdd(req.body)
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/textcontent'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+// Edit existing, add claim or role
+app.put("/api/textcontent/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  // Call the manager method
+  m.textContentEdit(req.body)
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/textcontent'));
+    })
+    .catch(() => {
+      res.status(404).json({ "message": "Resource not found" });
+    })
+});
+
+// Delete item
+app.delete("/api/textcontent/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  // Call the manager method
+  m.textContentDelete(req.params.id)
     .then(() => {
       res.status(204).end();
     })

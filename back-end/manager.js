@@ -17,10 +17,7 @@ const useraccountSchema = require('./msc-useraccount');
 const personSchema = require('./msc-person.js');
 // Add others as needed
 const alertSchema = require('./msc-alerts');
-
 const textContentSchema = require ('./msc-textcontent');
-
-const personalProfileSchema = require ('./msc-personalprofile');
 
 
 
@@ -35,7 +32,6 @@ module.exports = function () {
   let Persons;
   let Alerts;
   let textContent;
-  let personalProfiles;
 
   return {
 
@@ -49,11 +45,11 @@ module.exports = function () {
 
         // This one works for localhost...
         // Replace the database name with your own value
-        let db = mongoose.createConnection('mongodb://localhost/db');
+        //let db = mongoose.createConnection('mongodb://localhost/dps945');
 
         // This one works for MongoDB Atlas...
         // Replace the database user name and password, and database (cluster) name, with your own values
-        //let db = mongoose.createConnection('mongodb+srv://<database-user-name>:<database-user-password>@<your-atlas-cluster-name-abcde>.mongodb.net/databasename?retryWrites=true');
+        let db = mongoose.createConnection('mongodb+srv://dbUser:admin@senecaweb-lrhhe.mongodb.net/dps945?retryWrites=dps945&w=majority');
 
         // Handle connection events...
         // https://mongoosejs.com/docs/connections.html#connection-events
@@ -84,11 +80,9 @@ module.exports = function () {
           //console.log('db open/connected');
           UserAccounts = db.model("useraccounts", useraccountSchema, "useraccounts")
           // Add others
-          Persons = db.model("persons", personSchema, "persons")
-          Alerts = db.model("alerts", alertSchema, "alerts")
+          Persons = db.model("persons", personSchema)
+          Alerts = db.model("alerts", alertSchema)
           textContent = db.model("textContent", textContentSchema, "textContent")
-          personalProfiles = db.model("alerts", personalProfileSchema, "alerts")
-
           resolve();
         });
       });
@@ -276,6 +270,7 @@ module.exports = function () {
     // ############################################################
     // Person requests
 
+
     personGetAll: function () {
       return new Promise(function (resolve, reject) {
 
@@ -367,12 +362,10 @@ module.exports = function () {
      // ############################################################
     // Alert requests
 
-    alertGetAllActive: function () {
+    alertGetAll: function () {
       return new Promise(function (resolve, reject) {
-
         Alerts.find()
           .limit(20)
-          //.sort({ familyName: 'asc', givenName: 'asc' })
           .exec((error, items) => {
             if (error) {
               // Query error
@@ -383,6 +376,22 @@ module.exports = function () {
           });
       })
     },
+      
+      alertGetAllActive: function () {
+        return new Promise(function (resolve, reject) {
+          //let now = new Date();
+          Alerts.find()
+            .exec((error, items) => {
+              if (error) {
+                // Query error
+                return reject(error.message);
+              }
+             // if (now < Alerts.dateExpired)
+              // Found, a collection will be returned
+              return resolve(items);
+            });
+        })
+      },
 
     alertGetById: function (itemId) {
       return new Promise(function (resolve, reject) {
@@ -486,8 +495,55 @@ module.exports = function () {
       })
     },
 
-    //edit, post, put, delete are protected to contentEditor role
+    textContentAdd: function (newItem) {
+      return new Promise(function (resolve, reject) {
 
+        textContent.create(newItem, (error, item) => {
+          if (error) {
+            // Cannot add item
+            return reject(error.message);
+          }
+          //Added object will be returned
+          return resolve(item);
+        });
+      })
+    },
+
+    textContentEdit: function (newItem) {
+      return new Promise(function (resolve, reject) {
+
+        textContent.findByIdAndUpdate(newItem._id, newItem, { new: true }, (error, item) => {
+          if (error) {
+            // Cannot edit item
+            return reject(error.message);
+          }
+          // Check for an item
+          if (item) {
+            // Edited object will be returned
+            return resolve(item);
+          } else {
+            return reject('Not found');
+          }
+
+        });
+      })
+    },
+
+    textContentDelete: function (itemId) {
+      return new Promise(function (resolve, reject) {
+
+        textContent.findByIdAndRemove(itemId, (error) => {
+          if (error) {
+            // Cannot delete item
+            return reject(error.message);
+          }
+          // Return success, but don't leak info
+          return resolve();
+        })
+      })
+    }
+
+   
 
   } // return statement that encloses all the function members
 
