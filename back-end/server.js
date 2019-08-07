@@ -366,19 +366,24 @@ app.get("/api/alerts/:id", (req, res) => {
     })
 });
 
-
 // Add new
 app.post("/api/alerts", passport.authenticate('jwt', { session: false }), (req, res) => {
-  // Call the manager method
-  m.alertAdd(req.body)
+  // req.user has the token contents
+  if (req.user.roles.findIndex(role => role === 'contentEditor') > -1) {
+    // Success
+    m.alertAdd(req.body)
     .then((data) => {
       //res.json(data);
       res.json(package(data, '/api/alerts'));
     })
-    .catch((error) => {
-      res.status(500).json({ "message": error });
-    })
+  } else {
+    res.status(403).json({ message: "User does not have the role claim needed" })
+  .catch((error) => {
+    res.status(500).json({ "message": error });
+  })
+}
 });
+ 
 
 // Edit existing, add claim or role
 app.put("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
