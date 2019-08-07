@@ -15,6 +15,8 @@ import Feed from './Pages/Feed';
 import Location from './Pages/Location';
 import PeopleList from './Pages/PeopleList';
 
+import ComponentsOverview from './Pages/ComponentsOverview';
+
 const Router = () =>  {
     return (
       <BrowserRouter>
@@ -36,6 +38,8 @@ const Router = () =>  {
             <Route path="/people-list" component={PeopleList} />
             {/* Inbound Communication (news, announcements) */}
             <Route path="/feed" component={Feed} />
+
+            <Route path="/components-overview" component={ComponentsOverview} />
 
           </Switch>
         </div>
