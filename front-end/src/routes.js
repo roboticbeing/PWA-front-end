@@ -21,7 +21,7 @@ const Router = () =>  {
     return (
       <BrowserRouter>
         <div>
-        <Navigation/>
+        <Navigation auth="true"/>
           <Switch>
 
             <Route exact path="/" component={Home} />
