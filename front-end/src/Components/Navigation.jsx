@@ -114,7 +114,7 @@ export default class Navigation extends Component {
   state = { 
     showMobileMenu: false,
     activeId:null,
-    auth:this.props.auth === 'true' ? true : false,
+    auth: (this.props.auth === 'true' ? true : false) || (this.props.auth === true ? true : false),
     items:[
       {
         name:"☰ Menu",
