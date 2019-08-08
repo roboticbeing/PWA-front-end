@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Card from '../Components/Card';
 import FeedItem from '../Components/FeedItem';
 import CreateNews from '../Components/CreateNews';
+import db from '../api/db';
+import apiPath from '../api/apiPath';
+
 
 class ComponentsOverview extends Component {
   render() {
@@ -40,9 +43,22 @@ class ComponentsOverview extends Component {
         <Card>
           <CreateNews />
         </Card>
+
+        <hr/>
+        <h1>Axios</h1>
+        <button onClick={this.axiosTest}></button>
+
       </div>
     );
   }
+  //  -------------------------------
+  axiosTest = () =>  {
+    let dbx = new db();
+    let personApi = new apiPath()
+    dbx.add(personApi, 'person')
+    dbx.person.get()
+  }
+  //  -------------------------------
 }
 
 export default ComponentsOverview;
