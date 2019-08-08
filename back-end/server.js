@@ -275,8 +275,8 @@ app.delete("/api/persons/:id", passport.authenticate('jwt', { session: false }),
     })
 });
 
-// Get all alerts
-app.get("/api/alerts",  (req, res) => {
+// Get all feed items
+app.get("/api/feed",  (req, res) => {
   // Call the manager method
   m.alertGetAll()
     .then((data) => {
@@ -288,13 +288,61 @@ app.get("/api/alerts",  (req, res) => {
     })
 });
 
+//Get all news alerts
+app.get("/api/feed/news", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterNews()
+    .then((data) => {
+      res.json(package(data, '/api/alerts'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+//Get all event alerts
+app.get("/api/feed/events", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterEvents()
+    .then((data) => {
+      res.json(package(data, '/api/alerts'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+//Get all notice alerts
+app.get("/api/feed/notices", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterNotices()
+    .then((data) => {
+      res.json(package(data, '/api/feed'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+  });
+    
+//Get all alert alerts
+app.get("/api/feed/alerts", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterAlerts()
+    .then((data) => {
+      res.json(package(data, '/api/feed'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
 // Get all active alerts
-app.get("/api/alerts/active",  (req, res) => {
+app.get("/api/feed/active",  (req, res) => {
   // Call the manager method
   m.alertGetAllActive()
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/feed'));
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
@@ -303,12 +351,12 @@ app.get("/api/alerts/active",  (req, res) => {
 
 
 // Get one
-app.get("/api/alerts/:id", (req, res) => {
+app.get("/api/feed/:id", (req, res) => {
   // Call the manager method
   m.alertGetById(req.params.id)
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/feed'));
     })
     .catch(() => {
       res.status(404).json({ "message": "Resource not found" });
@@ -316,14 +364,14 @@ app.get("/api/alerts/:id", (req, res) => {
 });
 
 // Add new
-app.post("/api/alerts", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.post("/api/feed", passport.authenticate('jwt', { session: false }), (req, res) => {
   // req.user has the token contents
   if (req.user.roles.findIndex(role => role === 'contentEditor') > -1) {
     // Success
     m.alertAdd(req.body)
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/feed'));
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
@@ -335,13 +383,13 @@ app.post("/api/alerts", passport.authenticate('jwt', { session: false }), (req, 
  
 
 // Edit existing
-app.put("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.put("/api/feed/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
   if (req.user.roles.findIndex(role => role === 'contentEditor') > -1) {
   // Call the manager method
-  m.alertEdit(req.body)
+  m.alertEdit(req.params.id)
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/feed'));
     })
     .catch(() => {
       res.status(404).json({ "message": "Resource not found" });
@@ -352,7 +400,8 @@ app.put("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (re
 });
 
 // Delete item
-app.delete("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.delete("/api/feed/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  if (req.user.roles.findIndex(role => role === 'contentEditor') > -1) {
   // Call the manager method
   m.alertDelete(req.params.id)
     .then(() => {
@@ -361,6 +410,9 @@ app.delete("/api/alerts/:id", passport.authenticate('jwt', { session: false }), 
     .catch(() => {
       res.status(404).json({ "message": "Resource not found" });
     })
+  } else {
+    res.status(403).json({ message: "User does not have the role claim needed" })
+  }
 });
 
 // Get all text content

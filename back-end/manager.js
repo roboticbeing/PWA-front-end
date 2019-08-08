@@ -377,17 +377,117 @@ module.exports = function () {
       })
     },
       
+    alertGetAllFilterNews: function () {
+      return new Promise(function (resolve, reject) {
+          Alerts.find({category: 'news'})
+          .exec((error, items) => {
+              if (error) {
+                // Query error
+                return reject(error.message);
+              }
+              // Found, a collection will be returned
+              return resolve(items);
+            });
+        })
+  },
+
+  alertGetAllFilterEvents: function () {
+    return new Promise(function (resolve, reject) {
+        Alerts.find({category: 'event'})
+        .exec((error, items) => {
+            if (error) {
+              // Query error
+              return reject(error.message);
+            }
+            // Found, a collection will be returned
+            return resolve(items);
+          });
+      })
+},
+
+alertGetAllFilterNotices: function () {
+  return new Promise(function (resolve, reject) {
+      Alerts.find({category: 'notice'})
+      .exec((error, items) => {
+          if (error) {
+            // Query error
+            return reject(error.message);
+          }
+          // Found, a collection will be returned
+          return resolve(items);
+        });
+    })
+},
+
+alertGetAllFilterAlerts: function () {
+  return new Promise(function (resolve, reject) {
+      Alerts.find({category: 'alert'})
+      .exec((error, items) => {
+          if (error) {
+            // Query error
+            return reject(error.message);
+          }
+          // Found, a collection will be returned
+          return resolve(items);
+        });
+    })
+},
+
+alertGetAllFilterAnnouncements: function () {
+  return new Promise(function (resolve, reject) {
+      Alerts.find({category: 'announcement'})
+      .exec((error, items) => {
+          if (error) {
+            // Query error
+            return reject(error.message);
+          }
+          // Found, a collection will be returned
+          return resolve(items);
+        });
+    })
+},
+//     UserAccounts.findOneAndUpdate(
+//       { userName: userData.userName },
+//       { password: hash, statusActivated: true, roles: userData.roles, claims: userData.claims },
+//       { new: true }, (error, item) => {
+//         if (error) {
+//           // Cannot edit item
+//           return reject(`User account activation - ${error.message}`);
+//         }
+//         // Check for an item
+//         if (item) {
+//           // Edited object will be returned
+//           //return resolve(item);
+//           // Alternatively...
+//           return resolve('User account was activated');
+//         } else {
+//           return reject('User account activation - not found');
+//         }
+
+//       }); // UserAccounts.findOneAndUpdate
+//   }); // return new Promise
+// }, // useracco
+
+    // alertSetActive: function () {
+    //   return new Promise(function (resolve, reject {
+    //     let now = Date.now();
+    //     Alerts.findOneAndUpdate( 
+    //       { dateExpired: {$gte: now} },
+    //       { $set: {"active.$[element]": true }},
+    //       {arrayFilters: [{"element": {$gte: now}}]}
+
+    //     )
+    //   })
+    // },
+
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
-          //let now = new Date();
-          Alerts.find()
+          Alerts.find({active: true})
             .exec((error, items) => {
               if (error) {
                 // Query error
                 return reject(error.message);
               }
-             // if (now < Alerts.dateExpired)
-              // Found, a collection will be returned
               return resolve(items);
             });
         })
