@@ -23,6 +23,7 @@ class ComponentsOverview extends Component {
             author='Martin'
             category='Alerts'
             dateTime='2019-12-27'
+            content='<h1>Lorem html</h1> <u>Ipsum underline</u><h3>H3 tag</h3><strong>bold text</strong>'
           >
             <b>This is the content</b> Lorem <i>Ipsim</i> <u>rich html</u>
           </FeedItem>
