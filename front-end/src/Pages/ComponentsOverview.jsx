@@ -45,25 +45,16 @@ class ComponentsOverview extends Component {
 
         <hr/>
         <h1>Axios</h1>
-        <button onClick={this.axiosTest}></button>
+        <button onClick={this.axiosTest}>Axios Get Request</button>
 
       </div>
     );
   }
   //  -------------------------------
-  // axiosTest = () =>  {
-  //   let db = new api(new apiPath());
-  //   // db.add(new apiPath(), 'person')
-  //   // db.add(new apiPath(), 'personlist')
-  //   // db.add(new apiPath(), 'events')
-  //   // db.add(new apiPath(), 'person')
-  //   // db.person.get()
-  //   // db.init()
-  //    db.martin.get()
-  //    db.martin.post()
-  //    db.martin.find()
-  //   db.james.
-  // }
+  axiosTest = () =>  {
+    let db = new api();
+    db.peopleList.getId()
+  }
   //  -------------------------------
   
 }

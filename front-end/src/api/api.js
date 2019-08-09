@@ -1,35 +1,43 @@
 import axios from 'axios'
-// import apiPath from './apiPath';
+import apiPath from './apiPath';
 
+/*
+
+new apiPath('https://domain.com/api/', 'sub-route-endpoint/', AxiosConfig)
+
+getAll()
+getId() / findId()
+query({id:5, biggerThan:5})
+save()
+*/
 
 export default class api {
     
+    constructor() {
 
-    constructor(config) {
-        // this.domain = config.domain;
-        // this.path = '/'
-        // this.person = new apiPath();
-        
-           /**
-        * @param james.fuck Information about the user.
-        * @param userInfo.name The name of the user.
-        * @param userInfo.email The email of the user.
-        */
-        this.james = config
-    }
+        // Config for multiple Axios Config's
+        let config = {
 
-    get(){
-        axios.get('https://jsonplaceholder.typicode.com/todos/1')
-        .then(res => {
-            console.log(res)
-        })
-    }
+                cloudDomain: axios.create({
+                        baseURL: 'https://some-domain.com/api/',
+                        timeout: 1000,
+                        headers: {'X-Custom-Header': 'foobar'}
+                    }
+                ),
 
-    add(apiObj,name ) {
-        this[name] = apiObj;
-    }
+                otherDomain: axios.create({
+                        baseURL: 'https://other-domain.com/api/',
+                        timeout: 1000,
+                        headers: {'X-Custom-Header': 'foobar'}
+                    }
+                ),
+        }
 
-    init() {
-        // this.martin = new apiPath();
-    }
+        // Api Endpoints
+        this.example =      new apiPath('sub-route-endpoint/', config.cloudDomain)
+        this.peopleList =   new apiPath('peopleList/', config.cloudDomain)
+        this.james =        new apiPath('sub-route-endpoint/', config.cloudDomain)
+
+    }//constructor
 }
+
