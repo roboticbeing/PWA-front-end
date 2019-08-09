@@ -1,19 +1,21 @@
 import axios from 'axios'
 // import apiPath from './apiPath';
 
+
 export default class api {
     
 
-
-     /**
-  * @param userInfo Information about the user.
-  * @param userInfo.name The name of the user.
-  * @param userInfo.email The email of the user.
-  */
     constructor(config) {
         // this.domain = config.domain;
         // this.path = '/'
         // this.person = new apiPath();
+        
+           /**
+        * @param james.fuck Information about the user.
+        * @param userInfo.name The name of the user.
+        * @param userInfo.email The email of the user.
+        */
+        this.james = config
     }
 
     get(){
@@ -25,5 +27,9 @@ export default class api {
 
     add(apiObj,name ) {
         this[name] = apiObj;
+    }
+
+    init() {
+        // this.martin = new apiPath();
     }
 }

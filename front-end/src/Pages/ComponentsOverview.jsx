@@ -51,12 +51,19 @@ class ComponentsOverview extends Component {
     );
   }
   //  -------------------------------
-  axiosTest = () =>  {
-    let db = new api(null);
-    db.add(new apiPath(), 'person')
-    db.person.get()
-    
-  }
+  // axiosTest = () =>  {
+  //   let db = new api(new apiPath());
+  //   // db.add(new apiPath(), 'person')
+  //   // db.add(new apiPath(), 'personlist')
+  //   // db.add(new apiPath(), 'events')
+  //   // db.add(new apiPath(), 'person')
+  //   // db.person.get()
+  //   // db.init()
+  //    db.martin.get()
+  //    db.martin.post()
+  //    db.martin.find()
+  //   db.james.
+  // }
   //  -------------------------------
   
 }
