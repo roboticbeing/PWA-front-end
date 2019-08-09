@@ -468,21 +468,33 @@ alertGetAllFilterAnnouncements: function () {
 //   }); // return new Promise
 // }, // useracco
 
+
+
     // alertSetActive: function () {
     //   return new Promise(function (resolve, reject {
-    //     let now = Date.now();
     //     Alerts.findOneAndUpdate( 
-    //       { dateExpired: {$gte: now} },
+    //       { dateExpired: {$gte: new Date().now} },
     //       { $set: {"active.$[element]": true }},
-    //       {arrayFilters: [{"element": {$gte: now}}]}
+    //       { arrayFilters: [{"element": {$gte: now}}]}
 
     //     )
     //   })
     // },
 
+//     The steps will be (from db to js date):
+
+// 1. Create a javascript date object like this:
+ //let millisecondsSince1970 = Date.parse("2019-01-01T00:00:00.000Z");
+// let myDate = new Date(millisecondsSince1970)
+
+// 2. Step two will be to extract the different data from the myDateObject. Example of getting the year:
+
+// myDateObject.getFullYear()
+
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
-          Alerts.find({active: true})
+           let now = new Date();
+          Alerts.find({"dateExpired": {$gte : now.toISOString()}})
             .exec((error, items) => {
               if (error) {
                 // Query error
