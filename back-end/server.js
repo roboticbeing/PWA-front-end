@@ -195,60 +195,8 @@ app.post("/api/useraccounts/login", (req, res) => {
     });
 });
 
-
-
-// ################################################################################
-// Request handlers for testing security scenarios
-
-// For any route, if you add the "passport.authenticate..." function to the parameters,
-// it is equivalent to "yes, the request is authenticated", and no further test is required
-// Howevever, when you have to look deeper, and look for a specific claim, continue below...
-
-// Example - look for a specific role claim
-app.get('/api/security/testrole2', passport.authenticate('jwt', { session: false }), (req, res) => {
-
-  // req.user has the token contents
-  if (req.user.roles.findIndex(role => role === 'Role2') > -1) {
-    // Success
-    res.json({ message: "User has role claim Role2" })
-  } else {
-    res.status(403).json({ message: "User does not have the role claim needed" })
-  }
-});
-
-// Example - look for a specific custom claim
-app.get('/api/security/testoulocation1', passport.authenticate('jwt', { session: false }), (req, res) => {
-
-  // req.user has the token contents
-  if (req.user.claims.findIndex(claim => claim.type === 'OU' && claim.value === 'Location1') > -1) {
-    // Success
-    res.json({ message: "User has custom claim OU = Location1" })
-  } else {
-    res.status(403).json({ message: "User does not have the custom claim needed" })
-  }
-});
-
-// Example - look for a combination; a specific role claim, and a specific custom claim
-app.get('/api/security/testrole2andoulocation1', passport.authenticate('jwt', { session: false }), (req, res) => {
-
-  // req.user has the token contents
-
-  // The -if- statement will look too ugly, so write a few more helper statements
-  const roleIndex = req.user.roles.findIndex(role => role === 'Role2');
-  const claimIndex = req.user.claims.findIndex(claim => claim.type === 'OU' && claim.value === 'Location1');
-
-  // Make sure that both are found
-  if (roleIndex > -1 && claimIndex > -1) {
-    // Success
-    res.json({ message: "User has role claim Role2 and custom claim OU = Location1" })
-  } else {
-    res.status(403).json({ message: "User does not have the claims needed" })
-  }
-});
-
 // ################################################################################
 // Request handlers for data entities (listeners)
-
 
 // Get all
 app.get("/api/persons", (req, res) => {
@@ -327,10 +275,10 @@ app.delete("/api/persons/:id", passport.authenticate('jwt', { session: false }),
     })
 });
 
-// Get all active alerts
-app.get("/api/alerts", passport.authenticate('jwt', { session: false }), (req, res) => {
+// Get all feed items
+app.get("/api/feed",  (req, res) => {
   // Call the manager method
-  m.alertGetAllActive()
+  m.alertGetAll()
     .then((data) => {
       //res.json(data);
       res.json(package(data, '/api/alerts'));
@@ -340,13 +288,153 @@ app.get("/api/alerts", passport.authenticate('jwt', { session: false }), (req, r
     })
 });
 
+//Get all news alerts
+app.get("/api/feed/news", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterNews()
+    .then((data) => {
+      res.json(package(data, '/api/alerts'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+//Get all event alerts
+app.get("/api/feed/events", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterEvents()
+    .then((data) => {
+      res.json(package(data, '/api/alerts'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+//Get all notice alerts
+app.get("/api/feed/notices", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterNotices()
+    .then((data) => {
+      res.json(package(data, '/api/feed'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+  });
+    
+//Get all alert alerts
+app.get("/api/feed/alerts", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterAlerts()
+    .then((data) => {
+      res.json(package(data, '/api/feed'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+// Get all active alerts
+app.get("/api/feed/active",  (req, res) => {
+  // Call the manager method
+  m.alertGetAllActive()
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/feed'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+
 // Get one
-app.get("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get("/api/feed/:id", (req, res) => {
   // Call the manager method
   m.alertGetById(req.params.id)
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/feed'));
+    })
+    .catch(() => {
+      res.status(404).json({ "message": "Resource not found" });
+    })
+});
+
+// Add new
+app.post("/api/feed", passport.authenticate('jwt', { session: false }), (req, res) => {
+  // req.user has the token contents
+  if (req.user.roles.findIndex(role => role === 'contentEditor') > -1) {
+    // Success
+    m.alertAdd(req.body)
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/feed'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+  } else {
+    res.status(403).json({ message: "User does not have the role claim needed" })
+  }
+});
+ 
+
+// Edit existing
+app.put("/api/feed/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  if (req.user.roles.findIndex(role => role === 'contentEditor') > -1) {
+  // Call the manager method
+  m.alertEdit(req.params.id)
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/feed'));
+    })
+    .catch(() => {
+      res.status(404).json({ "message": "Resource not found" });
+    })
+  } else {
+    res.status(403).json({ message: "User does not have the role claim needed" })
+  }
+});
+
+// Delete item
+app.delete("/api/feed/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  if (req.user.roles.findIndex(role => role === 'contentEditor') > -1) {
+  // Call the manager method
+  m.alertDelete(req.params.id)
+    .then(() => {
+      res.status(204).end();
+    })
+    .catch(() => {
+      res.status(404).json({ "message": "Resource not found" });
+    })
+  } else {
+    res.status(403).json({ message: "User does not have the role claim needed" })
+  }
+});
+
+// Get all text content
+app.get("/api/textcontent",  (req, res) => {
+  // Call the manager method
+  m.textContentGetAll()
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/textcontent'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+// Get one
+app.get("/api/textcontent/:id", (req, res) => {
+  // Call the manager method
+  m.textContentById(req.params.id)
+    .then((data) => {
+      //res.json(data);
+      res.json(package(data, '/api/textcontent'));
     })
     .catch(() => {
       res.status(404).json({ "message": "Resource not found" });
@@ -355,12 +443,12 @@ app.get("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (re
 
 
 // Add new
-app.post("/api/alerts", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.post("/api/textcontent", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
-  m.alertAdd(req.body)
+  m.textContentAdd(req.body)
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/textcontent'));
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
@@ -368,12 +456,12 @@ app.post("/api/alerts", passport.authenticate('jwt', { session: false }), (req, 
 });
 
 // Edit existing, add claim or role
-app.put("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.put("/api/textcontent/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
-  m.alertEdit(req.body)
+  m.textContentEdit(req.body)
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/textcontent'));
     })
     .catch(() => {
       res.status(404).json({ "message": "Resource not found" });
@@ -381,9 +469,9 @@ app.put("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (re
 });
 
 // Delete item
-app.delete("/api/alerts/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.delete("/api/textcontent/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
   // Call the manager method
-  m.alertDelete(req.params.id)
+  m.textContentDelete(req.params.id)
     .then(() => {
       res.status(204).end();
     })
