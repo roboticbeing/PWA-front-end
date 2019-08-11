@@ -3,7 +3,7 @@ import Card from '../Components/Card';
 import FeedItem from '../Components/FeedItem';
 import CreateNews from '../Components/CreateNews';
 import api from '../api/api';
-import apiPath from '../api/apiPath';
+// import apiPath from '../api/apiPath';
 
 class ComponentsOverview extends Component {
   render() {
@@ -53,7 +53,7 @@ class ComponentsOverview extends Component {
   //  -------------------------------
   axiosTest = () =>  {
     let db = new api();
-    db.peopleList.getId()
+    db.peopleList.getAll()
   }
   //  -------------------------------
   
