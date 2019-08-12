@@ -26,4 +26,6 @@ export default class apiPath extends apiMethods {
     let relation = ['posts_id', 'freinds_id']
     constructor(endpoint = '', axiosConfig = {}, relation = {} )
     */
+
+     
 }

@@ -23,7 +23,7 @@ export default class api {
                 ),
 
                 testDomain: axios.create({
-                        baseURL: 'https://i-dont-know-the-server-adress.com/',
+                        baseURL: 'https://polar-peak-16816.herokuapp.com/api/',
                         timeout: 3000,
                         headers: {'X-Custom-Header': 'foobar'}
                     }
