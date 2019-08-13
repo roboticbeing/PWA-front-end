@@ -8,7 +8,7 @@ apiKing
 new apiPath('https://domain.com/api/', 'sub-route-endpoint/', AxiosConfig)
 
 */
-let authBearerToken = 'a'
+
 export default class api {
         
         config = {
@@ -27,7 +27,7 @@ export default class api {
                         'Accept': 'application/json',
                         'Access-Control-Allow-Origin': '*',
                         'Content-Type': 'application/json;charset=utf-8',
-                        'Authorization':authBearerToken,
+                        'Authorization':'-not defined',
                         // get:{
                         //     'Accept': 'application/json',
                         //     'Access-Control-Allow-Origin': '*',
@@ -40,17 +40,13 @@ export default class api {
 
     }
     constructor() {
-      // Config for multiple Axios Config's
 
-
-        // public: | jwt: 
         this.useraccountsMe       = new apiPath('useraccounts/me/', this.config.testDomain)
         this.useraccounts         = new apiPath('useraccounts/', this.config.testDomain)
         this.useraccountsActive   = new apiPath('useraccounts/active/', this.config.testDomain)
         this.useraccountsRegister = new apiPath('useraccounts/register/', this.config.testDomain)
         this.useraccountsLogin    = new apiPath('useraccounts/login/', this.config.testDomain)
 
-        // public: get | jwt: get, post, put
         this.persons              = new apiPath('persons/', this.config.testDomain)
         this.personsprotected     = new apiPath('personsprotected/', this.config.testDomain)
         this.feed                 = new apiPath('feed/', this.config.testDomain)
@@ -63,40 +59,6 @@ export default class api {
         this.peopleList           = new apiPath('peopleList/', this.config.testDomain)
         this.peopleList           = new apiPath('peopleList/', this.config.testDomain)
 
-
-      /* 
-      this.config.testDomain.interceptors.response.use((res)=> {
-
-          // check if token exists
-          if(res.data && res.data.token && res.data.token.length > 20 ){
-              console.log('apiPath.js:26|START: RESPONSE------------', res) // debugger
-              console.log('apiPath.js:26|TOKEN------------', res.data.token) // debugger
-              console.log('apiPath.js:53|', 'SETUP') // debugger
-               // debugger
-              //  this.config.testDomain.defaults.headers.common['Authorization'] = 'BEARER ' + res.data.token 
-              // this.config.testDomain.defaults.headers.common['Content-Type'] = "application/json;charset=utf-8"
-              // // that.axiosConfig.defaults.headers.common['Accept'] = "application/json"
-              // this.config.testDomain.defaults.headers.common['Access-Control-Allow-Origin'] = "*"
-
-              // this.config.testDomain.defaults.headers.get['Authorization'] = 'BEARER ' + res.data.token 
-              // this.config.testDomain.defaults.headers.get['Content-Type'] = "application/json;charset=utf-8"
-              // this.config.testDomain.defaults.headers.get['Accept'] = "application/json"
-              // this.config.testDomain.defaults.headers.get['Access-Control-Allow-Origin'] = "*"
-              this.config.testDomain.defaults.headers['Authorization'] = 'BEARER ' + res.data.token 
-              this.config.testDomain.defaults.headers['Content-Type'] = "application/json;charset=utf-8"
-              // this.config.testDomain.defaults.headers['Accept'] = "application/json"
-              this.config.testDomain.defaults.headers['Access-Control-Allow-Origin'] = "*"
-              console.log('apiPath.js:53|axiosconfig.default', this.config.testDomain.defaults.headers)
-              console.log('apiPath.js:33|', '-----end------') // debugger
-          }
-
-        // Do something with response data
-        return res;
-      }, function (error) {
-        // Do something with response error
-        return Promise.reject(error);
-      });
-      */
 
 
 

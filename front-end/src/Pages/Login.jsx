@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Login extends Component {
   handleSubmit() {
     alert('New feature coming soon...');
+    
   }
 
   render() {
