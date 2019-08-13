@@ -18,6 +18,7 @@ import PeopleList from './Pages/PeopleList';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import FAQ from './Pages/FAQ';
+import ImportantLocations from './Pages/ImportantLocations';
 import Language from './Pages/Language';
 import Laws from './Pages/Laws';
 import Medical from './Pages/Medical';
@@ -56,6 +57,7 @@ const Router = () =>  {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/faq" component={FAQ} />
+            <Route path="/important-locations" component={ImportantLocations} />
             <Route path="/language-barriers" component={Language} />
             <Route path="/laws-traditions" component={Laws} />
             <Route path="/medical" component={Medical} />
