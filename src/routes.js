@@ -15,6 +15,16 @@ import Feed from './Pages/Feed';
 import Location from './Pages/Location';
 import PeopleList from './Pages/PeopleList';
 
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import FAQ from './Pages/FAQ';
+import Language from './Pages/Language';
+import Laws from './Pages/Laws';
+import Medical from './Pages/Medical';
+import Overnight from './Pages/Overnight';
+import Safety from './Pages/Safety';
+import Theft from './Pages/Theft';
+
 import ComponentsOverview from './Pages/ComponentsOverview';
 
 import api from './api/api';
@@ -41,6 +51,17 @@ const Router = () =>  {
             <Route path="/people-list" component={PeopleList} />
             {/* Inbound Communication (news, announcements) */}
             <Route path="/feed" component={Feed} />
+
+            {/* Sophie's paths */}
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/language-barriers" component={Language} />
+            <Route path="/laws-traditions" component={Laws} />
+            <Route path="/medical" component={Medical} />
+            <Route path="/overnight" component={Overnight} />
+            <Route path="/safety" component={Safety} />
+            <Route path="theft" component={Theft} />
 
             <Route path="/components-overview" component={ComponentsOverview} />
 
