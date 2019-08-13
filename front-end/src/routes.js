@@ -17,7 +17,8 @@ import PeopleList from './Pages/PeopleList';
 
 import ComponentsOverview from './Pages/ComponentsOverview';
 
-
+import api from './api/api';
+export const db = new api();
 
 const Router = () =>  {
     return (

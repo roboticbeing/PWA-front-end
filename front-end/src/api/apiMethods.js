@@ -88,10 +88,10 @@ export default class apiMethods {
 
     // Auth--------------------------------------    
 
-    authRegister(userName, password ){
+    authRegister(userName, fullName, password, passwordConfirm ){
         let data = {
             "userName": userName,
-            "fullName": "mxartin qwerty",
+            "fullName": fullName,
             "password": password,
             "passwordConfirm": password,
             "statusActivated": true,
@@ -119,10 +119,10 @@ export default class apiMethods {
         })
     }
 
-    authLogin(userName, password ){
+    authLogin(userName, fullName, password, passwordConfirm ){
         let data = {
             "userName": userName,
-            "fullName": "mxartin qwerty",
+            "fullName": fullName,
             "password": password,
             "passwordConfirm": password,
             "statusActivated": true,
@@ -158,7 +158,6 @@ export default class apiMethods {
         axios.get('https://polar-peak-16816.herokuapp.com/api/useraccounts/me/')
         .then(res => {
             console.log(res)
-            console.log('apiMethods.js:189|this.axiosConfig.defaults', this.axiosConfig.defaults) // debugger
         })
        // https://polar-peak-16816.herokuapp.com/api/useraccounts/me/
     }
