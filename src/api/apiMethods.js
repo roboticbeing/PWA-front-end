@@ -1,5 +1,8 @@
-import axios from 'axios'
+import axios from 'axios';
+import store from '../store';
 import apiAuth from './apiAuth';
+
+import * as actionTypes from '../actions';
 
 export default class apiMethods {
 
@@ -148,6 +151,7 @@ export default class apiMethods {
             console.log(res)
             apiAuth.setAuthorizationToken( res.data.token)
             // that.authSetHeaderToken(res.data.token ) 
+            store.dispatch({type:actionTypes.LOGIN})
         })
     }
 

@@ -17,37 +17,39 @@ import PeopleList from './Pages/PeopleList';
 
 import ComponentsOverview from './Pages/ComponentsOverview';
 
+import RequireAuthentication from './Components/RequireAuthentication';
+
 import api from './api/api';
 export const db = new api();
 
 const Router = () =>  {
-    return (
-      <BrowserRouter>
-        <div>
-        <Navigation auth={"false"} />
-          <Switch>
+  return (
+    <BrowserRouter>
+      <div>
+      <Navigation />
+        <Switch>
 
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            {/* When user click activate account in email */}
-            <Route path="/account-activation" component={AccountActivation} />
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          {/* When user click activate account in email */}
+          <Route path="/account-activation" component={AccountActivation} />
 
-            <Route path="/settings" component={Settings} />
+          <Route path="/settings" component={RequireAuthentication(Settings)} />
 
-            <Route path="/location" component={Location} />
-            <Route path="/emergency" component={Emergency} />
-            <Route path="/alerts" component={Alerts} />
-            <Route path="/people-list" component={PeopleList} />
-            {/* Inbound Communication (news, announcements) */}
-            <Route path="/feed" component={Feed} />
+          <Route path="/location" component={RequireAuthentication(Location)} />
+          <Route path="/emergency" component={RequireAuthentication(Emergency)} />
+          <Route path="/alerts" component={RequireAuthentication(Alerts)} />
+          <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
+          {/* Inbound Communication (news, announcements) */}
+          <Route path="/feed" component={Feed} />
 
-            <Route path="/components-overview" component={ComponentsOverview} />
+          <Route path="/components-overview" component={RequireAuthentication(ComponentsOverview)} />
 
-          </Switch>
-        </div>
-      </BrowserRouter>
-    );
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
   }
 
-  export default Router;
+export default Router;

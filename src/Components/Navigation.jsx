@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 /* PROPS Documentation:
@@ -6,10 +7,11 @@ import { NavLink } from 'react-router-dom';
 - "auth" prop: true / false: will show different menu items, depending if the user is logged in or not.
 
 */
-export default class Navigation extends Component {
-  static defaultProps = {
-    authDefaultProp: false
-  };
+class Navigation extends Component {
+  constructor(props) {
+    super(props);
+    this.NavLinkCss = this.NavLinkCss.bind(this);
+  }
 
   render() {
     let navRender = null;
@@ -76,6 +78,9 @@ export default class Navigation extends Component {
   LiCss = item => {
     let a = [];
 
+    const { isAuthenticated } = this.props;
+    console.log();
+
     // Add css to "Menu burger"
     if (item.isBurger) {
       a.push('nav-menu-button right');
@@ -85,11 +90,11 @@ export default class Navigation extends Component {
       a.push('menu-hidden');
     }
     // Show menu items for users that is NOT logged in
-    if (!this.state.auth && item.authRoute && !item.showAllways) {
+    if (!isAuthenticated && item.authRoute && !item.showAllways) {
       a.push('nav-hidden');
     }
     // Show menu items for users that IS logged in
-    if (this.state.auth && !item.authRoute && !item.showAllways) {
+    if (isAuthenticated && !item.authRoute && !item.showAllways) {
       a.push('nav-hidden');
     }
     let res = a.join(' ');
@@ -218,3 +223,11 @@ export default class Navigation extends Component {
 
   //  -------------------------------
 }
+
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.isAuthenticated
+  };
+};
+
+export default connect(mapStateToProps)(Navigation);
