@@ -19,6 +19,8 @@ export default class apiMethods {
         axios.get(this.axiosConfig.defaults.baseURL + this.endpoint, this.axiosConfig)
         .then(res => {
             console.log(res)
+            store.dispatch({type:actionTypes.GET_FEED, data: res.data.data})
+            store.dispatch({type:actionTypes.GET_FEED_TIMESTAMP, timestamp: res.timestamp})
         })
     }
 

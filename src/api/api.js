@@ -55,7 +55,7 @@ export default class api {
         this.feedEvents           = new apiPath('feed/events/', this.config.testDomain)
         this.feedNews             = new apiPath('feed/news/', this.config.testDomain)
         this.feedNotice           = new apiPath('feed/notices/', this.config.testDomain)
-        this.textcontent           = new apiPath('textcontent/', this.config.testDomain)
+        this.textcontent          = new apiPath('textcontent/', this.config.testDomain)
         this.peopleList           = new apiPath('peopleList/', this.config.testDomain)
         this.peopleList           = new apiPath('peopleList/', this.config.testDomain)
 
