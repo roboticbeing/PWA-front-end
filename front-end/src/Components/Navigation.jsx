@@ -17,7 +17,7 @@ export default class Navigation extends Component {
 
     if ( this.state.items ) {
       navRender = (
-        <div>
+        <ul className='topnav'>
           {this.state.items.map((item, index) => {
             return <li key={item.id} className={ this.LiCss(item) }>
               <NavLink 
@@ -30,7 +30,7 @@ export default class Navigation extends Component {
               </li>
 
           })}
-        </div>
+        </ul>
       );
     }
     
@@ -38,9 +38,7 @@ export default class Navigation extends Component {
       <div>
 
         <div>
-        <ul className='topnav'>
           {navRender}
-        </ul>
         </div>
       </div>
     );
