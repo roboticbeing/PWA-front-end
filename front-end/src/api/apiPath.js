@@ -1,10 +1,22 @@
-//
-import api from './api';
+// import api from './api';
+import apiMethods from './apiMethods';
+import axios from 'axios'
+    // https://my-domain.com/api/  person/
+    // ^domain^                    ^endpoint^
 
 
-export default class ClassName extends api {
-    constructor(config) {
-        super(config)
-        // this.path = config.path;
+export default class apiPath extends apiMethods {
+   
+    endpoint;
+    axiosConfig; 
+
+    // TODO - axiosConfig: provide defult values to axios config, if no config is provided
+    // TODO - add parameter "relation" * 
+    constructor(endpoint = '', axiosConfig = {}) {
+        // super(endpoint,axiosConfig)
+        super()
+        this.endpoint = endpoint;
+        this.axiosConfig = axiosConfig;
+
     }
 }

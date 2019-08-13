@@ -3,9 +3,11 @@ import Card from '../Components/Card';
 import FeedItem from '../Components/FeedItem';
 import CreateNews from '../Components/CreateNews';
 import api from '../api/api';
-import apiPath from '../api/apiPath';
+// import apiPath from '../api/apiPath';
 
 class ComponentsOverview extends Component {
+ state = {email: 'a@a.dk'};
+
   render() {
     return (
       <div>
@@ -45,27 +47,36 @@ class ComponentsOverview extends Component {
 
         <hr/>
         <h1>Axios</h1>
-        <button onClick={this.axiosTest}></button>
+        <input type='text' name="name" onChange={(e)=>this.setState({email: e.target.value})} value={this.state.email}></input>
+        <button onClick={this.axiosRegister}>Axios Register Account</button>
+        <button onClick={this.axiosLogin}>Axios Login</button>
+        <button onClick={this.axiosMe}>Axios /ME</button>
 
       </div>
     );
   }
   //  -------------------------------
-  // axiosTest = () =>  {
-  //   let db = new api(new apiPath());
-  //   // db.add(new apiPath(), 'person')
-  //   // db.add(new apiPath(), 'personlist')
-  //   // db.add(new apiPath(), 'events')
-  //   // db.add(new apiPath(), 'person')
-  //   // db.person.get()
-  //   // db.init()
-  //    db.martin.get()
-  //    db.martin.post()
-  //    db.martin.find()
-  //   db.james.
-  // }
+  axiosRegister = () =>  {
+    let db = new api();
+    let email= this.state.email;
+    db.useraccountsRegister.authRegister(email, 'apple123')
+  }
+  axiosLogin = () =>  {
+    let db = new api();
+    db.useraccountsLogin.authLogin(this.state.email, 'apple123')
+  }
+  axiosMe = () =>  {
+    let db = new api();
+    db.useraccountsMe.me()
+  }
+
+  handleChange(event) {
+    console.log('ComponentsOverview.jsx:74|', event.target) // debugger
+    this.setState({email: event.target.email});
+  }
   //  -------------------------------
-  
+
+
 }
 
 export default ComponentsOverview;
