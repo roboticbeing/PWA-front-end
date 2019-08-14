@@ -2,6 +2,19 @@
 /* APP ------------------------ */
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif,
+  -apple-system,
+  /* Chrome < 56 for OS X (San Francisco)*/
+  BlinkMacSystemFont,
+  /* Windows */
+  "Segoe UI",
+  /* Android */
+  "Roboto",
+  /* Basic web fallback */
+  "Helvetica Neue", Arial, sans-serif,
+  /*Emoji fonts*/
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
 }
 
 .App-logo {
@@ -71,6 +84,9 @@ input[type=submit], button {
 /* Navigation ------------------------ */
 ul.topnav {
   list-style-type: none;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size:18px;
+  font-weight: 200;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -111,15 +127,45 @@ ul.topnav li.right {float: right;}
   .menu-hidden{
     display: none;
   }
+  ul.topnav {
+    font-size:24px;
+  }
 }
 
 
 /* Home ------------------------ */
+.home-header {
+  height: 250px;
+  width: 100%;
+  background-image: url('img/moves_cover.png');
+  background-size: cover;
+
+  /* align: middle-center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+  }
+.home .cover{
+    opacity: 0.5;
+}
 .home-item {
   border:4px solid blue;
   height: 50px;
   width: 50%;
+  background-image: (src:'./public/')
 }
+.circle{
+  border: 1px red solid;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
 
 /* 
 .btn-grad {background-image: linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%)}

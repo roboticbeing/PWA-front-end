@@ -1,13 +1,25 @@
 import React, { Component } from 'react'
 import '../App.css';
 
-
 class Home extends Component {
   render () {
     return ( 
     
     <div className='home'>
-       <div className='home-item'>sasssssssssssssssssd</div>
+       <div className='home-header'><img src='img/moves_logo_large.png' className='cover'/></div>
+       <div className='home-item'>
+
+
+          <ul>
+              <li  className='center'>
+                <div>
+                  <div className='circle center'><img src='icons/masks/libra.png' className=''/></div>
+                  <div className='Link'></div>
+                </div>
+              </li>
+          </ul>
+
+       </div>
     </div>
     
     );
