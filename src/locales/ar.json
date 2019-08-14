@@ -1,0 +1,19 @@
+{
+    "Login": {
+        "username": "العضو:",
+        "password": "كلمة المرور:",
+        "login": "تسجيل الدخول:"
+    },
+    "Register": {
+        "email": "البريد الإلكتروني:",
+        "fullname": "الاسم الكامل:",
+        "password": "كلمة المرور:",
+        "confirmpassword": "تأكيد كلمة المرور:"
+    },
+    "Home": {
+        "home": "منزل"
+    },
+    "Contact": {
+        "contact": "تحول"
+    }
+}

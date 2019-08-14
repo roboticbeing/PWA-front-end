@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-class MyClass extends Component {
+class Language extends Component {
   render () {
     return ( 
-
+    
     <div >
-      Alerts
+      Language Barriers
     </div>
     
     );
   }
 }
 
-export default MyClass;
+export default Language;

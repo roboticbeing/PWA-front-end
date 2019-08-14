@@ -43,6 +43,7 @@ export default class api {
 
         this.useraccountsMe       = new apiPath('useraccounts/me/', this.config.testDomain)
         this.useraccounts         = new apiPath('useraccounts/', this.config.testDomain)
+        //activate?
         this.useraccountsActive   = new apiPath('useraccounts/active/', this.config.testDomain)
         this.useraccountsRegister = new apiPath('useraccounts/register/', this.config.testDomain)
         this.useraccountsLogin    = new apiPath('useraccounts/login/', this.config.testDomain)
@@ -55,7 +56,8 @@ export default class api {
         this.feedEvents           = new apiPath('feed/events/', this.config.testDomain)
         this.feedNews             = new apiPath('feed/news/', this.config.testDomain)
         this.feedNotice           = new apiPath('feed/notices/', this.config.testDomain)
-        this.textcontent          = new apiPath('textcontent/', this.config.testDomain)
+        this.feedAnnouncement   = new apiPath('feed/announcements/', this.config.testDomain)
+        this.textcontent           = new apiPath('textcontent/', this.config.testDomain)
         this.peopleList           = new apiPath('peopleList/', this.config.testDomain)
         this.peopleList           = new apiPath('peopleList/', this.config.testDomain)
 

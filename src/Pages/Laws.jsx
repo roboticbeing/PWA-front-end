@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-class MyClass extends Component {
+class Laws extends Component {
   render () {
     return ( 
-
+    
     <div >
-      Alerts
+      Laws and Traditions
     </div>
     
     );
   }
 }
 
-export default MyClass;
+export default Laws;

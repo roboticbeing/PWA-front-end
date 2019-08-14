@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-class MyClass extends Component {
+class Overnight extends Component {
   render () {
     return ( 
-
+    
     <div >
-      Alerts
+      Overnight stays
     </div>
     
     );
   }
 }
 
-export default MyClass;
+export default Overnight;
