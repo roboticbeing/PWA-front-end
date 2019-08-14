@@ -37,21 +37,22 @@ const Router = () =>  {
     return (
       <BrowserRouter>
         <div>
-        <Navigation auth="false"/>
+        <Navigation />
           <Switch>
 
             <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             {/* When user click activate account in email */}
             <Route path="/account-activation" component={AccountActivation} />
 
-            <Route path="/settings" component={Settings} />
+            <Route path="/settings" component={RequireAuthentication(Settings)} />
 
-            <Route path="/location" component={Location} />
-            <Route path="/emergency" component={Emergency} />
-            <Route path="/alerts" component={Alerts} />
-            <Route path="/people-list" component={PeopleList} />
+            <Route path="/location" component={RequireAuthentication(Location)} />
+            <Route path="/emergency" component={RequireAuthentication(Emergency)} />
+            <Route path="/alerts" component={RequireAuthentication(Alerts)} />
+            <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
             {/* Inbound Communication (news, announcements) */}
             <Route path="/feed" component={Feed} />
 
@@ -67,40 +68,12 @@ const Router = () =>  {
             <Route path="/safety" component={Safety} />
             <Route path="theft" component={Theft} />
 
-            <Route path="/components-overview" component={ComponentsOverview} />
+            <Route path="/components-overview" component={RequireAuthentication(ComponentsOverview)} />
 
           </Switch>
         </div>
       </BrowserRouter>
     );
-  return (
-    <BrowserRouter>
-      <div>
-      <Navigation />
-        <Switch>
-
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          {/* When user click activate account in email */}
-          <Route path="/account-activation" component={AccountActivation} />
-
-          <Route path="/settings" component={RequireAuthentication(Settings)} />
-
-          <Route path="/location" component={RequireAuthentication(Location)} />
-          <Route path="/emergency" component={RequireAuthentication(Emergency)} />
-          <Route path="/alerts" component={RequireAuthentication(Alerts)} />
-          <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
-          {/* Inbound Communication (news, announcements) */}
-          <Route path="/feed" component={Feed} />
-
-          <Route path="/components-overview" component={RequireAuthentication(ComponentsOverview)} />
-
-        </Switch>
-      </div>
-    </BrowserRouter>
-  );
   }
 
 export default Router;
