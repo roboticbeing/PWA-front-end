@@ -2,9 +2,11 @@
     "Login": {
         "username": "User Name:",
         "password": "Password:",
-        "login": "Log In:"
+        "login": "Log In:",
+        "loginheader": "Login"
     },
     "Register": {
+        "register": "Register",
         "email": "Email:",
         "fullname": "Full Name:",
         "password": "Password:",
@@ -15,5 +17,30 @@
     },
     "Contact": {
         "contact": "Contact"
+    },
+    "Menu": {
+        "menu": "☰ Menu"
+    },
+
+    "Feed": {
+        "feed": "Feed",
+        "news": "News",
+        "announcements": "Announcements",
+        "notices": "Notices",
+        "events": "Events",
+        "alerts": "Alerts"
+    },
+    "Location": {
+        "location": "Location"
+    },
+    "Emergency": {
+        "emergency": "Emergency"
+    },
+    "Alerts": {
+        "alerts": "Alerts"
+    },
+    "People-List":{
+        "people-list": "People-List"
     }
+
 }

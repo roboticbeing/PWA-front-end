@@ -15,5 +15,29 @@
     },
     "Contact": {
         "contact": "Kontakt"
+    },
+    "Menu": {
+        "menu": "☰ Menu"
+    },
+
+    "Feed": {
+        "feed": "Nyhedsstrøm",
+        "news": "Nyheder",
+        "announcements": "Meddelelser",
+        "notices": "Notifikationer",
+        "events": "Begivenheder",
+        "alerts": "Advarsler"
+    },
+    "Location": {
+        "location": "Beliggenhed"
+    },
+    "Emergency": {
+        "emergency": "Emergency"
+    },
+    "Alerts": {
+        "alerts": "Advarsler"
+    },
+    "People-List":{
+        "people-list": "Folk-liste"
     }
 }

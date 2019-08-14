@@ -182,6 +182,7 @@ class Navigation extends Component {
         css: '',
         id: 22
       },
+      //do we need this? v
       {
         name: 'Alerts',
         route: '/alerts',
@@ -192,7 +193,7 @@ class Navigation extends Component {
         id: 23
       },
       {
-        name: 'People-list',
+        name: 'People-List',
         route: '/people-list',
         authRoute: true,
         isBurger: false,

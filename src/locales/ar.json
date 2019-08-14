@@ -15,5 +15,28 @@
     },
     "Contact": {
         "contact": "تحول"
+    }, 
+    "Menu": {
+        "menu": "قائمة الطعام ☰"
+    },
+    "Feed": {
+        "feed": "أخبار",
+        "news": "علف",
+        "announcements": "إعلانات",
+        "notices": "إخطارات",
+        "events": "أحداث",
+        "alerts": "تحذيرات"
+    },
+    "Location": {
+        "location": "موقع"
+    },
+    "Emergency": {
+        "emergency": "الطوارئ"
+    },
+    "Alerts": {
+        "alerts": "تحذيرات"
+    },
+    "People-List":{
+        "people-list": "قائمة الشعب"
     }
 }
