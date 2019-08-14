@@ -7,13 +7,7 @@
     "i18next": "^17.0.11",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-<<<<<<< HEAD
-    "react-i18next": "^10.12.1",
-    "react-native": "^0.60.5",
-    "react-native-i18n": "^2.0.15",
-=======
     "react-redux": "^7.1.0",
->>>>>>> b2ff2c9dffdabaf0d7d7be92380f0b053606ec9b
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.1.0",
     "redux": "^4.0.4"
