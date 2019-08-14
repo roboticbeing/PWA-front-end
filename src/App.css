@@ -153,10 +153,11 @@ ul.topnav li.right {float: right;}
   border:4px solid blue;
   height: 50px;
   width: 50%;
-  background-image: (src:'./public/')
 }
+
 .circle{
   border: 1px red solid;
+  background: #4CAF50;
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -164,8 +165,17 @@ ul.topnav li.right {float: right;}
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  display: block;
 }
 
+.home .icon{
+  mask-type: luminance;
+  color:white;
+  background: white;
+}
+.home .icon1{
+  mask-image:url('/img/icons/masks/libra.png');
+}
 
 /* 
 .btn-grad {background-image: linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%)}

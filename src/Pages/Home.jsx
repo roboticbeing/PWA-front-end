@@ -13,7 +13,7 @@ class Home extends Component {
           <ul>
               <li  className='center'>
                 <div>
-                  <div className='circle center'><img src='icons/masks/libra.png' className=''/></div>
+                  <div className='circle center'><div className='icon icon1'></div></div>
                   <div className='Link'></div>
                 </div>
               </li>
