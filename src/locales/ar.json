@@ -1,42 +1,21 @@
 {
-    "Login": {
-        "username": "العضو:",
-        "password": "كلمة المرور:",
-        "login": "تسجيل الدخول:"
-    },
-    "Register": {
-        "email": "البريد الإلكتروني:",
-        "fullname": "الاسم الكامل:",
-        "password": "كلمة المرور:",
-        "confirmpassword": "تأكيد كلمة المرور:"
-    },
-    "Home": {
-        "home": "منزل"
-    },
-    "Contact": {
-        "contact": "تحول"
-    }, 
-    "Menu": {
-        "menu": "قائمة الطعام ☰"
-    },
-    "Feed": {
-        "feed": "أخبار",
-        "news": "علف",
-        "announcements": "إعلانات",
-        "notices": "إخطارات",
-        "events": "أحداث",
-        "alerts": "تحذيرات"
-    },
-    "Location": {
-        "location": "موقع"
-    },
-    "Emergency": {
-        "emergency": "الطوارئ"
-    },
-    "Alerts": {
-        "alerts": "تحذيرات"
-    },
-    "People-List":{
-        "people-list": "قائمة الشعب"
-    }
+    "username": "العضو:",
+    "password": "كلمة المرور:",
+    "login": "تسجيل الدخول:",
+    "register": "إشترك",
+    "email": "البريد الإلكتروني:",
+    "fullname": "الاسم الكامل:",
+    "confirmpassword": "تأكيد كلمة المرور:",
+    "home": "منزل",
+    "contact": "تحول",
+    "menu": "قائمة الطعام",
+    "feed": "أخبارعلف",
+    "news": "أخبار",
+    "announcements": "إعلانات",
+    "notices": "إخطارات",
+    "events": "أحداث",
+    "alerts": "تحذيرات",
+    "location": "موقع",
+    "emergency": "الطوارئ",
+    "people-list": "قائمة الشعب"
 }

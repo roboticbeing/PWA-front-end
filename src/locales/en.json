@@ -1,46 +1,21 @@
 {
-    "Login": {
-        "username": "User Name:",
-        "password": "Password:",
-        "login": "Log In:",
-        "loginheader": "Login"
-    },
-    "Register": {
-        "register": "Register",
-        "email": "Email:",
-        "fullname": "Full Name:",
-        "password": "Password:",
-        "confirmpassword": "Confirm Password:"
-    },
-    "Home": {
-        "home": "Home"
-    },
-    "Contact": {
-        "contact": "Contact"
-    },
-    "Menu": {
-        "menu": "☰ Menu"
-    },
-
-    "Feed": {
-        "feed": "Feed",
-        "news": "News",
-        "announcements": "Announcements",
-        "notices": "Notices",
-        "events": "Events",
-        "alerts": "Alerts"
-    },
-    "Location": {
-        "location": "Location"
-    },
-    "Emergency": {
-        "emergency": "Emergency"
-    },
-    "Alerts": {
-        "alerts": "Alerts"
-    },
-    "People-List":{
-        "people-list": "People-List"
-    }
-
+    "username": "User Name:",
+    "password": "Password:",
+    "login": "Log In:",
+    "register": "Register",
+    "email": "Email:",
+    "fullname": "Full Name:",
+    "confirmpassword": "Confirm Password:",
+    "home": "Home",
+    "contact": "Contact",
+    "menu": "Menu",
+    "feed": "Feed",
+    "news": "News",
+    "announcements": "Announcements",
+    "notices": "Notices",
+    "events": "Events",
+    "alerts": "Alerts",
+    "location": "Location",
+    "emergency": "Emergency",
+    "people-list": "People-List"
 }

@@ -1,43 +1,21 @@
 {
-    "Login": {
-        "username": "User:",
-        "password": "Adgangskode:",
-        "login": "Log på:"
-    }, 
-    "Register": {
-        "email": "E-mail:",
-        "fullname": "Fulde navn:",
-        "password": "Adgangskode:",
-        "confirmpassword": "Bekræft kodeord:"
-    },
-    "Home": {
-        "home": "Hjem"
-    },
-    "Contact": {
-        "contact": "Kontakt"
-    },
-    "Menu": {
-        "menu": "☰ Menu"
-    },
-
-    "Feed": {
-        "feed": "Nyhedsstrøm",
-        "news": "Nyheder",
-        "announcements": "Meddelelser",
-        "notices": "Notifikationer",
-        "events": "Begivenheder",
-        "alerts": "Advarsler"
-    },
-    "Location": {
-        "location": "Beliggenhed"
-    },
-    "Emergency": {
-        "emergency": "Emergency"
-    },
-    "Alerts": {
-        "alerts": "Advarsler"
-    },
-    "People-List":{
-        "people-list": "Folk-liste"
-    }
+    "username": "User:",
+    "password": "Adgangskode:",
+    "login": "Log på:",
+    "register": "Tilmeld",
+    "email": "Email:",
+    "fullname": "Fulde navn:",
+    "confirmpassword": "Bekræft kodeord:",
+    "home": "Hjem",
+    "contact": "Kontakt",
+    "menu": "Menu",
+    "feed": "Nyhedsstrøm",
+    "news": "Nyheder",
+    "announcements": "Meddelelser",
+    "notices": "Notifikationer",
+    "events": "Begivenheder",
+    "alerts": "Advarsler",
+    "location": "Beliggenhed",
+    "emergency": "Emergency",
+    "people-list": "Folk-liste"
 }
