@@ -136,7 +136,7 @@ ul.topnav li.right {float: right;}
 
 /* Home ------------------------ */
 .home-header {
-    height: 300px;
+    height: 200px;
     width: 100%;
     background-image: url('img/moves_home.jpg');
     background-size: cover;
@@ -147,14 +147,15 @@ ul.topnav li.right {float: right;}
     text-align:center;
 }
 .home .menu-wrapper{
-  display: flex;
-  flex-wrap:wrap;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-item {
-
        height: 50px;
-       width: 40%;
+    margin-top: 16px;
+    text-align: center;
        -webkit-animation: fadein 1s;
        /*Safari,ChromeandOpera>12.1*/-moz-animation: fadein 1s;
        /*Firefox<16*/-ms-animation: fadein 1s;
@@ -199,9 +200,11 @@ ul.topnav li.right {float: right;}
   justify-content: center !important;
   text-align:center !important;
   cursor: pointer;
-  display: inline-block;
-  vertical-align: middle;
-  display: inline-flex;
+  width: 42%;
+  height:100px;
+  margin:10px;
+  float: left;
+
 }
 
 .home .Link{
@@ -211,7 +214,7 @@ ul.topnav li.right {float: right;}
   font-size: 18px;
   font-family: 'Nunito Sans', sans-serif;
   font-size:24px;
-  margin-top: 8px;
+  margin-top: px;
   font-weight: 200;
   text-align:center;
 }
@@ -245,7 +248,7 @@ ul.topnav li.right {float: right;}
   justify-content: center;
   align-items: center;
   align-content: center;
-  height:200px;
+  height:160px;
 }
 
 @keyframes fadein {

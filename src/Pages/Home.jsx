@@ -18,7 +18,7 @@ class Home extends Component {
           {this.state.items.map((item, index) => {
             return (
               <span  key={item.id} className='grid5 circle-wrapper'>
-                <div className='circle center'><img  className='circleImg' src='icons/white/email.png'/></div>
+                <div className='circle center'><img  className='circleImg' src={'icons/white/' + item.img +'.png'}/></div>
                 <div className='Link'>{item.name}</div>
               </span >
             );
@@ -51,84 +51,103 @@ class Home extends Component {
       (this.props.auth === true ? true : false),
     items: [
       {
-        name: 'Register',
-        route: '/register',
+        name: 'Charity',
+        route: '/charity',
         authRoute: false,
         isBurger: false,
         showAllways: false,
         css: '',
-        id: 12
+        img:'charity',
+        id: 12,
       },
       {
-        name: 'Login',
-        route: '/login',
+        name: 'Email',
+        route: '/email',
         authRoute: false,
         isBurger: false,
         showAllways: false,
         css: '',
+        img:'email',
         id: 11
       },
       {
-        name: 'News',
-        route: '/news',
-        authRoute: true,
+        name: 'Heart',
+        route: '/heart',
+        authRoute: false,
         isBurger: false,
         showAllways: false,
         css: '',
+        img:'heart',
         id: 20
       },
       {
-        name: 'Location',
-        route: '/location',
+        name: 'Help',
+        route: '/help',
         authRoute: true,
         isBurger: false,
         showAllways: false,
         css: '',
+        img:'help',
         id: 21
       },
       {
-        name: 'Emergency',
-        route: '/emergency',
+        name: 'Libra',
+        route: '/libra',
         authRoute: true,
         isBurger: false,
         showAllways: false,
         css: '',
+        img:'libra',
         id: 22
       },
       {
-        name: 'Alerts',
-        route: '/alerts',
+        name: 'Man User',
+        route: '/man-user',
         authRoute: true,
         isBurger: false,
         showAllways: false,
         css: '',
+        img:'man-user',
         id: 23
       },
       {
-        name: 'People-list',
-        route: '/people-list',
+        name: 'Location',
+        route: '/map-location',
         authRoute: true,
         isBurger: false,
         showAllways: false,
         css: '',
+        img:'map-location',
         id: 24
       },
       {
-        name: 'Feed',
-        route: '/feed',
+        name: 'Slumber',
+        route: '/slumber',
         authRoute: true,
         isBurger: false,
         showAllways: false,
         css: '',
+        img:'slumber',
         id: 25
       },
       {
-        name: 'Contact',
-        route: '/contact',
+        name: 'speaking',
+        route: '/speaking',
         authRoute: false,
         isBurger: false,
         showAllways: true,
         css: '',
+        img:'speaking',
+        id: 26
+      },
+      {
+        name: 'Thief',
+        route: '/thief',
+        authRoute: false,
+        isBurger: false,
+        showAllways: true,
+        css: '',
+        img:'thief',
         id: 26
       }
     ]
