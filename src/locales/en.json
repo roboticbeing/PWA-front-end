@@ -1,0 +1,19 @@
+{
+    "Login": {
+        "username": "User Name:",
+        "password": "Password:",
+        "login": "Log In:"
+    },
+    "Register": {
+        "email": "Email:",
+        "fullname": "Full Name:",
+        "password": "Password:",
+        "confirmpassword": "Confirm Password:"
+    },
+    "Home": {
+        "home": "Home"
+    },
+    "Contact": {
+        "contact": "Contact"
+    }
+}

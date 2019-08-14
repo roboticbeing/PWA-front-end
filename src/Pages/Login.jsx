@@ -31,6 +31,7 @@ class Login extends Component {
             User Name:
             <input type='text' name='userName'onChange={(e)=>this.setState({userName: e.target.value})}   />
           </label>
+       
           <br />
           <label>
             Password:
@@ -39,11 +40,15 @@ class Login extends Component {
           <br />
           <button type='submit' className='btn btn-primary'>
             Log In
-          </button>
+            </button>
         </form>
       </div>
     );
   }
 }
 
+
+
+
 export default Login;
+

@@ -1,0 +1,19 @@
+{
+    "Login": {
+        "username": "User:",
+        "password": "Adgangskode:",
+        "login": "Log på:"
+    }, 
+    "Register": {
+        "email": "E-mail:",
+        "fullname": "Fulde navn:",
+        "password": "Adgangskode:",
+        "confirmpassword": "Bekræft kodeord:"
+    },
+    "Home": {
+        "home": "Hjem"
+    },
+    "Contact": {
+        "contact": "Kontakt"
+    }
+}
