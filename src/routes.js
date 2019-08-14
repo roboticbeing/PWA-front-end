@@ -34,7 +34,6 @@ import api from './api/api';
 export const db = new api();
 
 const Router = () =>  {
-<<<<<<< HEAD
     return (
       <BrowserRouter>
         <div>
@@ -74,7 +73,6 @@ const Router = () =>  {
         </div>
       </BrowserRouter>
     );
-=======
   return (
     <BrowserRouter>
       <div>
@@ -103,7 +101,6 @@ const Router = () =>  {
       </div>
     </BrowserRouter>
   );
->>>>>>> release5
   }
 
 export default Router;
