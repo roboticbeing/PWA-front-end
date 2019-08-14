@@ -34,6 +34,7 @@ import api from './api/api';
 export const db = new api();
 
 const Router = () =>  {
+<<<<<<< HEAD
     return (
       <BrowserRouter>
         <div>
@@ -73,6 +74,36 @@ const Router = () =>  {
         </div>
       </BrowserRouter>
     );
+=======
+  return (
+    <BrowserRouter>
+      <div>
+      <Navigation />
+        <Switch>
+
+          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          {/* When user click activate account in email */}
+          <Route path="/account-activation" component={AccountActivation} />
+
+          <Route path="/settings" component={RequireAuthentication(Settings)} />
+
+          <Route path="/location" component={RequireAuthentication(Location)} />
+          <Route path="/emergency" component={RequireAuthentication(Emergency)} />
+          <Route path="/alerts" component={RequireAuthentication(Alerts)} />
+          <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
+          {/* Inbound Communication (news, announcements) */}
+          <Route path="/feed" component={Feed} />
+
+          <Route path="/components-overview" component={RequireAuthentication(ComponentsOverview)} />
+
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
+>>>>>>> release5
   }
 
 export default Router;
