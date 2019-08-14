@@ -114,6 +114,18 @@ ul.topnav li.right {float: right;}
 }
 
 
+/* Home ------------------------ */
+.home-item {
+  border:4px solid blue;
+  height: 50px;
+  width: 50%;
+}
+
+/* 
+.btn-grad {background-image: linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%)}
+.btn-grad:hover { background-position: right center; }
+*/
+
 /* Card ------------------------ */
 
 .Card{

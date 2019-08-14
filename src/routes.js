@@ -30,6 +30,7 @@ const Router = () =>  {
         <Switch>
 
           <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           {/* When user click activate account in email */}
