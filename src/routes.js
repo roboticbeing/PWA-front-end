@@ -28,10 +28,13 @@ import Theft from './Pages/Theft';
 
 import ComponentsOverview from './Pages/ComponentsOverview';
 
+import RequireAuthentication from './Components/RequireAuthentication';
+
 import api from './api/api';
 export const db = new api();
 
 const Router = () =>  {
+<<<<<<< HEAD
     return (
       <BrowserRouter>
         <div>
@@ -71,6 +74,35 @@ const Router = () =>  {
         </div>
       </BrowserRouter>
     );
+=======
+  return (
+    <BrowserRouter>
+      <div>
+      <Navigation />
+        <Switch>
+
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          {/* When user click activate account in email */}
+          <Route path="/account-activation" component={AccountActivation} />
+
+          <Route path="/settings" component={RequireAuthentication(Settings)} />
+
+          <Route path="/location" component={RequireAuthentication(Location)} />
+          <Route path="/emergency" component={RequireAuthentication(Emergency)} />
+          <Route path="/alerts" component={RequireAuthentication(Alerts)} />
+          <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
+          {/* Inbound Communication (news, announcements) */}
+          <Route path="/feed" component={Feed} />
+
+          <Route path="/components-overview" component={RequireAuthentication(ComponentsOverview)} />
+
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
+>>>>>>> b2ff2c9dffdabaf0d7d7be92380f0b053606ec9b
   }
 
-  export default Router;
+export default Router;

@@ -9,8 +9,6 @@ export function  setAuthorizationToken (token) {
             axios.defaults.headers.get['Content-Type'] = "application/json;charset=utf-8"
             axios.defaults.headers.get['Accept'] = "application/json"
             axios.defaults.headers.get['Access-Control-Allow-Origin'] = "*"
-
-            localStorage.setItem('authToken', JSON.stringify(token) )
         } else {
             delete axios.defaults.headers.common['authorization'];
         }
