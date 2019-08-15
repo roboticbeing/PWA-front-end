@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { db } from '../routes';
 
 class Register extends Component {
@@ -74,4 +75,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default withTranslation()(Register);

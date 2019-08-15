@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
+import LanguageSelector from './Components/LanguageSelector';
 import Navigation from './Components/Navigation';
 
 import Login from './Pages/Login';
@@ -37,7 +38,7 @@ const Router = () =>  {
     return (
       <BrowserRouter>
         <div>
-        <div className='lang-footer'>DA | EN | AR</div>
+        <LanguageSelector />
         <Navigation />
           <Switch>
 

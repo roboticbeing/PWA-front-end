@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import i18next from 'i18next';
 import { db } from '../routes';
+import { withTranslation } from 'react-i18next';
 
 class Login extends Component {
   constructor(props) {
@@ -71,4 +72,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withTranslation()(Login);

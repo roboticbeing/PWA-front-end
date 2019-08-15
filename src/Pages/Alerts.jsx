@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 
 class MyClass extends Component {
   render() {
@@ -7,4 +8,4 @@ class MyClass extends Component {
   }
 }
 
-export default MyClass;
+export default withTranslation()(MyClass);

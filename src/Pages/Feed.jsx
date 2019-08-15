@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { db } from '../routes';
 import Card from '../Components/Card';
 import FeedItem from '../Components/FeedItem';
@@ -139,4 +140,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Feed);
+export default connect(mapStateToProps)(withTranslation()(Feed));

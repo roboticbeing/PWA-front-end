@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 
 class Location extends Component {
   render() {
@@ -7,4 +8,4 @@ class Location extends Component {
   }
 }
 
-export default Location;
+export default withTranslation()(Location);
