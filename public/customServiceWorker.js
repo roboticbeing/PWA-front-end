@@ -8,15 +8,15 @@ if (workbox) {
 
 
 // Cache name
-const CACHE_NAME = 'static-cache-v9';
+const CACHE_NAME = 'static-cache-v10';
 
 // Files to cache
 const FILES_TO_CACHE = [
                         '/',
-                        '/index.html',
-                        'index.html',
+                        '/src/index.html',
+                        '/src/App.js',
+                        '/src/App.css',
                         'favicon.ico',
-                        '/customServiceWorker.js',
                         'moves-logo-144.png',
                         'moves-logo-192.png',
                         'moves-logo-512.png',
