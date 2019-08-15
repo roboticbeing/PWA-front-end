@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Navigation from './Components/Navigation';
 
 import Login from './Pages/Login';
+import Logout from './Pages/Logout';
 import Home from './Pages/Home';
 import Register from './Pages/Register';
 import AccountActivation from './Pages/AccountActivation';
@@ -44,6 +45,7 @@ const Router = () =>  {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route path="/login" component={Login} />
+            <Route path="/logout" component={Logout} />
             <Route path="/register" component={Register} />
             {/* When user click activate account in email */}
             <Route path="/account-activation" component={AccountActivation} />
@@ -55,7 +57,7 @@ const Router = () =>  {
             <Route path="/alerts" component={RequireAuthentication(Alerts)} />
             <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
             {/* Inbound Communication (news, announcements) */}
-            <Route path="/feed" component={Feed} />
+            <Route path="/feed" component={RequireAuthentication(Feed)} />
 
             {/* Sophie's paths */}
             <Route path="/about" component={About} />

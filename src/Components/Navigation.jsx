@@ -79,7 +79,6 @@ class Navigation extends Component {
     let a = [];
 
     const { isAuthenticated } = this.props;
-    console.log();
 
     // Add css to "Menu burger"
     if (item.isBurger) {
@@ -154,6 +153,15 @@ class Navigation extends Component {
         showAllways: false,
         css: '',
         id: 11
+      },
+      {
+        name: 'Logout',
+        route: '/logout',
+        authRoute: true,
+        isBurger: false,
+        showAllways: false,
+        css: '',
+        id: 27
       },
       {
         name: 'News',
