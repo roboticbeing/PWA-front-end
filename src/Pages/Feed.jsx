@@ -9,11 +9,11 @@ class Feed extends Component {
     super(props);
     this.state = {
       filter: {
-        news: false,
-        announcements: false,
-        notices: false,
-        events: false,
-        alerts: false
+        news: true,
+        announcements: true,
+        notices: true,
+        events: true,
+        alerts: true
       }
     };
     this.handleChange = this.handleChange.bind(this);
@@ -41,6 +41,8 @@ class Feed extends Component {
     return (
       <div>
         <div>Feed</div>
+        <div className='feed-wrapper'>
+
         <div>
           <input
             onChange={this.handleChange}
@@ -48,7 +50,7 @@ class Feed extends Component {
             type='checkbox'
             checked={this.state.filter.news}
           />
-          <label htmlFor={this.id}>News</label>
+          <label htmlFor='news'>News</label>
         </div>
         <div>
           <input
@@ -57,7 +59,7 @@ class Feed extends Component {
             type='checkbox'
             checked={this.state.filter.announcements}
           />
-          <label htmlFor={this.id}>Announcements</label>
+          <label htmlFor='announcements'>Announcements</label>
         </div>
         <div>
           <input
@@ -66,7 +68,7 @@ class Feed extends Component {
             type='checkbox'
             checked={this.state.filter.notices}
           />
-          <label htmlFor={this.id}>Notices</label>
+          <label htmlFor='notices'>Notices</label>
         </div>
         <div>
           <input
@@ -75,7 +77,7 @@ class Feed extends Component {
             type='checkbox'
             checked={this.state.filter.events}
           />
-          <label htmlFor={this.id}>Events</label>
+          <label htmlFor='events'>Events</label>
         </div>
         <div>
           <input
@@ -84,9 +86,11 @@ class Feed extends Component {
             type='checkbox'
             checked={this.state.filter.alerts}
           />
-          <label htmlFor={this.id}>Alerts</label>
+          <label htmlFor='alerts'>Alerts</label>
         </div>
         <div>
+
+        </div>
           {feed &&
             feed.map((item, index) => {
               if (filter[item.category]) {

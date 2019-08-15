@@ -60,7 +60,7 @@
 /* Global CSS ------------------------ */
 
 hr{
-  margin: 32px 0px; 
+  margin: 16px 0px; 
 }
 
 .pointer{
@@ -80,7 +80,53 @@ input[type=submit], button {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+/* Checkbox ------------------------ */
 
+@keyframes hover-color {
+  from {
+    border-color: #c0c0c0; }
+  to {
+    border-color: #3e97eb; } }
+
+    input[type='checkbox'] { 
+      border: 2px solid #3e97eb;
+      background-color: #3e97eb;
+      color:white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      width:20px;
+      height:20px;
+      margin: 4px;
+
+
+     }
+     input[type=checkbox]:hover {
+      box-shadow:0px 0px 10px silver;
+  }
+  .feed-wrapper input[type='checkbox']{
+    margin-left: 16px;
+  }
+  .feed-wrapper label{
+    padding-left: 8px;
+    color:grey;
+  }
+
+
+  .feed-wrapper input[type=checkbox]:checked + label {
+    color: black;
+
+    font-weight: bold;
+  } 
+  .feed-wrapper label:hover{
+    color: #3e97eb;
+    cursor:pointer;
+  }
+  .feed-wrapper input[type=checkbox]:checked + label:hover {
+    color: #3e97eb;
+
+    font-weight: bold;
+  } 
 /* Navigation ------------------------ */
 ul.topnav {
   list-style-type: none;
@@ -130,6 +176,11 @@ ul.topnav li.right {float: right;}
   }
   ul.topnav {
     font-size:24px;
+  }
+
+  .FeedItemName{
+    font-weight: bold;
+    font-size: 60%;
   }
 }
 
@@ -288,8 +339,8 @@ ul.topnav li.right {float: right;}
 
 .Card{
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-  padding:8px;
-  margin: 8px 16px;
+  padding:20px;
+  margin: 20px 16px;
   box-sizing: content-box;
   border: 1px solid #cfcfcf;
   border-radius: 3px;
@@ -298,9 +349,19 @@ ul.topnav li.right {float: right;}
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
+  -webkit-animation: fadein 1s;
+  /*Safari,ChromeandOpera>12.1*/-moz-animation: fadein 1s;
+  /*Firefox<16*/-ms-animation: fadein 1s;
+  /*InternetExplorer*/-o-animation: fadein 1s;
+  /*Opera<12.1*/animation: fadein 1s;
+}
+.Card:hover{
+  border: 1px solid #38A1F3;
 }
 
 /* FeedItem ------------------------ */
+
+.feed-input-wrapper{margin:50px;}
 
 .FeedItemAutorAndBtnContainer{
   height: auto;
@@ -312,7 +373,7 @@ ul.topnav li.right {float: right;}
 }
 .FeedItemName{
   font-weight: bold;
-  font-size: 80%;
+  font-size: 160%;
 }
 .FeedItemDate{
   font-size: 66%;
@@ -339,7 +400,7 @@ ul.topnav li.right {float: right;}
 }
 .FeedItemBtn:hover{
   background-color: #38A1F3;
-  color:white  !important;;
+  color:white  !important;
 }
 .FeedItemContent{
   display: block;
