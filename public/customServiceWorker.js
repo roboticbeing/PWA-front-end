@@ -8,16 +8,19 @@ if (workbox) {
 
 
 // Cache name
-const CACHE_NAME = 'static-cache-v1';
+const CACHE_NAME = 'static-cache-v8';
 
 // Files to cache
-const FILES_TO_CACHE = ['index.html',
+const FILES_TO_CACHE = [
+                        '/',
+                        '/index.html',
+                        'index.html',
                         'favicon.ico',
                         'moves-logo-144.png',
                         'moves-logo-192.png',
                         'moves-logo-512.png',
-                        'asset-manifest.json',
-                        'manifest.json',
+                        // 'asset-manifest.json',
+                        // 'manifest.json',
 
                         'moves_home.jpg',
                         'img/moves_home.jpg',
