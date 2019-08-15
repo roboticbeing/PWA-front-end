@@ -23,7 +23,7 @@ state = { id:  'randomId_' + Math.floor((Math.random() * 1000000000000) + 1) };
                 
             </div>
       </div>
-
+      <hr></hr>
       <div id={this.state.id}></div>
       
     </div>

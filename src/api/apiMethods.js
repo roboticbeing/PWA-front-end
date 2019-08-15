@@ -146,15 +146,24 @@ export default class apiMethods {
                 }
             ]
         }
-    
-        let that = this
-        axios.post(this.axiosConfig.defaults.baseURL + this.endpoint, data, this.axiosConfig.defaults)
-        .then(res => {
-            console.log(res)
-            apiAuth.setAuthorizationToken( res.data.token)
-            // that.authSetHeaderToken(res.data.token ) 
-            store.dispatch({type:actionTypes.LOGIN})
-        })
+
+        return axios.post(this.axiosConfig.defaults.baseURL + this.endpoint, data, this.axiosConfig.defaults)
+                .then(res => {
+                    apiAuth.setAuthorizationToken(res.data.token)
+                    if (res.data.token) {
+                        store.dispatch({type:actionTypes.LOGIN});
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                })
+                .catch(() => {return false})
+    }
+
+    unauth() {
+        apiAuth.setAuthorizationToken();
+        store.dispatch({type:actionTypes.LOGOUT});
     }
 
 
