@@ -7,7 +7,7 @@ class EmergencyContact extends Component {
     return ( 
     
     <div >
-      return <div>{i18next.t('location')}</div>;
+      return <div>{i18next.t('emergencyContact')}</div>;
     </div>
     
     );
