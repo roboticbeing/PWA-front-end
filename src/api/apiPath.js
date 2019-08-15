@@ -1,6 +1,5 @@
 // import api from './api';
 import apiMethods from './apiMethods';
-import axios from 'axios'
     // https://my-domain.com/api/  person/
     // ^domain^                    ^endpoint^
 
