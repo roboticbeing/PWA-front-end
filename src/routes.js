@@ -11,7 +11,7 @@ import Register from './Pages/Register';
 import AccountActivation from './Pages/AccountActivation';
 import Settings from './Pages/Settings';
 
-import Alerts from './Pages/Alerts';
+import Alerts from './Pages/Push';
 import Emergency from './Pages/EmergencyContact';
 import Feed from './Pages/Feed';
 import Location from './Pages/Geolocation';
@@ -60,6 +60,7 @@ const Router = () =>  {
             <Route path="/feed" component={RequireAuthentication(Feed)} />
 
             {/* Sophie's paths */}
+            <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/faq" component={FAQ} />
             <Route path="/important-locations" component={ImportantLocations} />
