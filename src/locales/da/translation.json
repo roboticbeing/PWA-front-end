@@ -1,7 +1,8 @@
 {
   "username": "User:",
   "password": "Adgangskode:",
-  "login": "Log på:",
+  "login": "Log på",
+  "logout": "Log ud",
   "register": "Tilmeld",
   "email": "Email:",
   "fullname": "Fulde navn:",
@@ -15,7 +16,17 @@
   "notices": "Notifikationer",
   "events": "Begivenheder",
   "alerts": "Advarsler",
+  "push": "Skubbe",
   "location": "Beliggenhed",
   "emergency": "Emergency",
-  "people-list": "Folk-liste"
+  "people-list": "Folk-liste",
+  "safety-tips": "sikkerhedstips",
+  "medical-needs": "medicinske behov",
+  "faq": "Ofte stillede spørgsmål",
+  "laws": "Love og traditioner",
+  "about": "Om os",
+  "important-locations":"Vigtige Steder",
+  "overnight":"overnatninger",
+  "language-barriers": "sprogbarrierer",
+  "theft": "Tyveri Cases"
 }

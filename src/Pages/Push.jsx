@@ -7,7 +7,7 @@ class Push extends Component {
     return ( 
 
     <div >
-       return <div>{i18next.t('alerts')}</div>;
+       return <div>{i18next.t('push')}</div>;
     </div>
     
     );

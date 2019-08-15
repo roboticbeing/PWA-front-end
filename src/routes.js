@@ -11,12 +11,13 @@ import Register from './Pages/Register';
 import AccountActivation from './Pages/AccountActivation';
 import Settings from './Pages/Settings';
 
-import Alerts from './Pages/Alerts';
-import Emergency from './Pages/EmergencyContact';
+import Push from './Pages/Push';
+import EmergencyContact from './Pages/EmergencyContact';
 import Feed from './Pages/Feed';
-import Location from './Pages/Geolocation';
+import Geolocation from './Pages/Geolocation';
 import PeopleList from './Pages/PeopleList';
 
+import About from './Pages/About';
 import Contact from './Pages/Contact';
 import FAQ from './Pages/FAQ';
 import ImportantLocations from './Pages/ImportantLocations';
@@ -52,14 +53,15 @@ const Router = () =>  {
 
             <Route path="/settings" component={RequireAuthentication(Settings)} />
 
-            <Route path="/geolocation" component={RequireAuthentication(Location)} />
-            <Route path="/emergency-contact" component={RequireAuthentication(Emergency)} />
-            <Route path="/push" component={RequireAuthentication(Alerts)} />
+            <Route path="/geolocation" component={RequireAuthentication(Geolocation)} />
+            <Route path="/emergency-contact" component={RequireAuthentication(EmergencyContact)} />
+            <Route path="/push" component={RequireAuthentication(Push)} />
             <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
             {/* Inbound Communication (news, announcements) */}
             <Route path="/feed" component={RequireAuthentication(Feed)} />
 
             {/* Sophie's paths */}
+            <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/faq" component={FAQ} />
             <Route path="/important-locations" component={ImportantLocations} />

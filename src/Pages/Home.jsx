@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Link} from "react-router-dom";
+import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 
 class Home extends Component {
   render() {
@@ -43,7 +45,7 @@ class Home extends Component {
       (this.props.auth === true ? true : false),
     items: [
       {
-        name: 'Safety Tips',
+        name: i18next.t('safety-tips'),
         route: '/safety',
         authRoute: false,
         isBurger: false,
@@ -53,7 +55,7 @@ class Home extends Component {
         id: 12
       },
       {
-        name: 'Contact',
+        name: i18next.t('contact'),
         route: '/contact',
         authRoute: false,
         isBurger: false,
@@ -63,7 +65,7 @@ class Home extends Component {
         id: 11
       },
       {
-        name: 'Medical Needs',
+        name: i18next.t('medical-needs'),
         route: '/medical',
         authRoute: false,
         isBurger: false,
@@ -73,7 +75,7 @@ class Home extends Component {
         id: 20
       },
       {
-        name: 'FAQ',
+        name: i18next.t('faq'),
         route: '/faq',
         authRoute: true,
         isBurger: false,
@@ -83,7 +85,7 @@ class Home extends Component {
         id: 21
       },
       {
-        name: 'Laws and Traditions',
+        name: i18next.t('laws'),
         route: '/laws-traditions',
         authRoute: true,
         isBurger: false,
@@ -93,7 +95,7 @@ class Home extends Component {
         id: 22
       },
       {
-        name: 'About Us',
+        name: i18next.t('about'),
         route: '/about',
         authRoute: true,
         isBurger: false,
@@ -103,7 +105,7 @@ class Home extends Component {
         id: 23
       },
       {
-        name: 'Important Locations',
+        name: i18next.t('important-locations'),
         route: '/important-locations',
         authRoute: true,
         isBurger: false,
@@ -113,7 +115,7 @@ class Home extends Component {
         id: 24
       },
       {
-        name: 'Overnight Stays',
+        name: i18next.t('overnight'),
         route: '/overnight',
         authRoute: true,
         isBurger: false,
@@ -123,7 +125,7 @@ class Home extends Component {
         id: 25
       },
       {
-        name: 'Language Barriers',
+        name: i18next.t('language-barriers'),
         route: '/language-barriers',
         authRoute: false,
         isBurger: false,
@@ -133,7 +135,7 @@ class Home extends Component {
         id: 26
       },
       {
-        name: 'Theft Cases',
+        name: i18next.t('theft'),
         route: '/theft',
         authRoute: false,
         isBurger: false,
@@ -146,4 +148,4 @@ class Home extends Component {
   };
 }
 
-export default Home;
+export default withTranslation()(Home);
