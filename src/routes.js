@@ -69,7 +69,7 @@ const Router = () =>  {
             <Route path="/medical" component={Medical} />
             <Route path="/overnight" component={Overnight} />
             <Route path="/safety" component={Safety} />
-            <Route path="theft" component={Theft} />
+            <Route path="/theft" component={Theft} />
 
             <Route path="/components-overview" component={RequireAuthentication(ComponentsOverview)} />
 
