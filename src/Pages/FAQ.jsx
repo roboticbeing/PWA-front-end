@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 
 class FAQ extends Component {
   render () {
     return ( 
     
     <div >
-      FAQ
+      return <div>{i18next.t('faq')}</div>;
     </div>
     
     );
   }
 }
 
-export default FAQ;
+export default withTranslation()(FAQ);

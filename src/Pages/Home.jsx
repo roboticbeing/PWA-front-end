@@ -43,6 +43,7 @@ class Home extends Component {
       (this.props.auth === true ? true : false),
     items: [
       {
+        
         name: 'Safety Tips',
         route: '/safety',
         authRoute: false,

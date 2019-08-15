@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 
 class ImportantLocations extends Component {
   render () {
     return ( 
     
     <div >
-      Important Locations
+     <div>{i18next.t('important-locations')}</div>
     </div>
     
     );
   }
 }
 
-export default ImportantLocations;
+export default withTranslation()(ImportantLocations);

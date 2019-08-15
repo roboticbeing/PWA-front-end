@@ -6,7 +6,7 @@ class Geolocation extends Component {
   render () {
     return ( 
     
-      <div>{i18next.t('geolocation')}</div>
+      <div>{i18next.t('location')}</div>
     
     );
   }

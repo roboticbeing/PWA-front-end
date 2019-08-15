@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
+
 
 class Medical extends Component {
   render () {
     return ( 
     
-    <div >
-      Medical needs
-    </div>
+      <div>{i18next.t('medical')}</div>
     
     );
   }
 }
 
-export default Medical;
+export default withTranslation()(Medical);
