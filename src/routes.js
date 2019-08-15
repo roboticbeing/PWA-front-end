@@ -52,8 +52,8 @@ const Router = () =>  {
 
             <Route path="/settings" component={RequireAuthentication(Settings)} />
 
-            <Route path="/geolocation" component={RequireAuthentication(Location)} />
-            <Route path="/emergency-contact" component={RequireAuthentication(Emergency)} />
+            <Route path="/geolocation" component={RequireAuthentication(Geoocation)} />
+            <Route path="/emergency-contact" component={RequireAuthentication(EmergencyContact)} />
             <Route path="/push" component={RequireAuthentication(Push)} />
             <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
             {/* Inbound Communication (news, announcements) */}
