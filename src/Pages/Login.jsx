@@ -25,7 +25,6 @@ class Login extends Component {
         this.state.passwordConfirm
       )
       .then(res => {
-        console.log(res);
         if (res) {
           this.setState({ renderRedirect: true });
         }

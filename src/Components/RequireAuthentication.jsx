@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Login from '../Pages/Login';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Redirect } from 'react-router-dom';
@@ -9,8 +8,6 @@ export default function(ComposedComponent) {
   class Authentication extends Component {
     render() {
       const { isAuthenticated } = this.props;
-
-      console.log('isAuthenticated: ' + isAuthenticated);
 
       return isAuthenticated ? (
         <ComposedComponent {...this.props} />
