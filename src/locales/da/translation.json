@@ -17,5 +17,14 @@
   "alerts": "Advarsler",
   "location": "Beliggenhed",
   "emergency": "Emergency",
-  "people-list": "Folk-liste"
+  "people-list": "Folk-liste",
+  "safety-tips": "sikkerhedstips",
+  "medical-needs": "medicinske behov",
+  "faq": "Ofte stillede spørgsmål",
+  "laws": "Love og traditioner",
+  "about": "Om os",
+  "important-locations":"Vigtige Steder",
+  "overnight":"overnatninger",
+  "language-barriers": "sprogbarrierer",
+  "theft": "Tyveri Cases"
 }
