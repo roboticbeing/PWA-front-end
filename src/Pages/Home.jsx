@@ -45,7 +45,7 @@ class Home extends Component {
       (this.props.auth === true ? true : false),
     items: [
       {
-        name: i18next.t('safety-tips'),
+        name: `${i18next.t('safety-tips')}`,
         route: '/safety',
         authRoute: false,
         isBurger: false,
@@ -55,7 +55,7 @@ class Home extends Component {
         id: 12
       },
       {
-        name: i18next.t('contact'),
+        name: `${i18next.t('contact')}`,
         route: '/contact',
         authRoute: false,
         isBurger: false,
@@ -65,7 +65,7 @@ class Home extends Component {
         id: 11
       },
       {
-        name: i18next.t('medical-needs'),
+        name: `${i18next.t('medical-needs')}`,
         route: '/medical',
         authRoute: false,
         isBurger: false,
@@ -75,7 +75,7 @@ class Home extends Component {
         id: 20
       },
       {
-        name: i18next.t('faq'),
+        name: `${i18next.t('faq')}`,
         route: '/faq',
         authRoute: true,
         isBurger: false,
@@ -85,7 +85,7 @@ class Home extends Component {
         id: 21
       },
       {
-        name: i18next.t('laws'),
+        name: `${i18next.t('about')}`,
         route: '/laws-traditions',
         authRoute: true,
         isBurger: false,
@@ -95,7 +95,7 @@ class Home extends Component {
         id: 22
       },
       {
-        name: i18next.t('about'),
+        name: `${i18next.t('about')}`,
         route: '/about',
         authRoute: true,
         isBurger: false,
@@ -105,7 +105,7 @@ class Home extends Component {
         id: 23
       },
       {
-        name: i18next.t('important-locations'),
+        name: `${i18next.t('important-locations')}`,
         route: '/important-locations',
         authRoute: true,
         isBurger: false,
@@ -115,7 +115,7 @@ class Home extends Component {
         id: 24
       },
       {
-        name: i18next.t('overnight'),
+        name: `${i18next.t('overnight')}`,
         route: '/overnight',
         authRoute: true,
         isBurger: false,
@@ -125,7 +125,7 @@ class Home extends Component {
         id: 25
       },
       {
-        name: i18next.t('language-barriers'),
+        name: `${i18next.t('language-barriers')}`,
         route: '/language-barriers',
         authRoute: false,
         isBurger: false,
@@ -135,7 +135,7 @@ class Home extends Component {
         id: 26
       },
       {
-        name: i18next.t('theft'),
+        name: `${i18next.t('theft')}`,
         route: '/theft',
         authRoute: false,
         isBurger: false,

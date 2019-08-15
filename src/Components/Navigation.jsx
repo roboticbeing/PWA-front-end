@@ -121,7 +121,7 @@ class Navigation extends Component {
       (this.props.auth === true ? true : false),
     items: [
       {
-        name: '☰' + i18next.t('menu'),
+        name: '☰' + `${i18next.t('menu')}`,
         authRoute: false,
         route: '#',
         isBurger: true,
@@ -130,7 +130,7 @@ class Navigation extends Component {
         id: 1
       },
       {
-        name: i18next.t('home'),
+        name: `${i18next.t('home')}`,
         route: '/home',
         authRoute: false,
         isBurger: false,
@@ -139,7 +139,7 @@ class Navigation extends Component {
         id: 10
       },
       {
-        name: i18next.t('register'),
+        name: `${i18next.t('register')}`,
         route: '/register',
         authRoute: false,
         isBurger: false,
@@ -148,7 +148,7 @@ class Navigation extends Component {
         id: 12
       },
       {
-        name: i18next.t('login'),
+        name: `${i18next.t('login')}`,
         route: '/login',
         authRoute: false,
         isBurger: false,
@@ -157,17 +157,8 @@ class Navigation extends Component {
         id: 11
       },
      
-      // {
-      //   name: 'News',
-      //   route: '/news',
-      //   authRoute: true,
-      //   isBurger: false,
-      //   showAllways: false,
-      //   css: '',
-      //   id: 20
-      // },
       {
-        name: i18next.t('location'),
+        name: `${i18next.t('location')}`,
         route: '/geolocation',
         authRoute: true,
         isBurger: false,
@@ -176,7 +167,7 @@ class Navigation extends Component {
         id: 21
       },
       {
-        name: i18next.t('emergency'),
+        name: `${i18next.t('emergency')}`,
         route: '/emergency',
         authRoute: true,
         isBurger: false,
@@ -186,7 +177,7 @@ class Navigation extends Component {
       },
   
       {
-        name: i18next.t('push'),
+        name: `${i18next.t('push')}`,
         route: '/push',
         authRoute: true,
         isBurger: false,
@@ -195,7 +186,7 @@ class Navigation extends Component {
         id: 23
       },
       {
-        name: i18next.t('people-list'),
+        name: `${i18next.t('people-list')}`,
         route: '/people-list',
         authRoute: true,
         isBurger: false,
@@ -204,7 +195,7 @@ class Navigation extends Component {
         id: 24
       },
       {
-        name: i18next.t('feed'),
+        name: `${i18next.t('feed')}`,
         route: '/feed',
         authRoute: true,
         isBurger: false,
@@ -213,7 +204,7 @@ class Navigation extends Component {
         id: 25
       },
       {
-        name: i18next.t('contact'),
+        name: `${i18next.t('contact')}`,
         route: '/contact',
         authRoute: false,
         isBurger: false,
@@ -222,7 +213,7 @@ class Navigation extends Component {
         id: 26
       },
       {
-        name: i18next.t('logout'),
+        name: `${i18next.t('logout')}`,
         route: '/logout',
         authRoute: true,
         isBurger: false,
