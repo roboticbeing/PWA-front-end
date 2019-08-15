@@ -18,9 +18,9 @@ class Feed extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-
+//Get All Active Feed
   componentDidMount() {
-    db.feed.getAll();
+    db.feedActive.getAll();
   }
 
   handleChange = event => {
@@ -86,6 +86,7 @@ class Feed extends Component {
           />
           <label htmlFor={this.id}>Alerts</label>
         </div>
+        
         <div>
           {feed &&
             feed.map((item, index) => {
@@ -106,6 +107,26 @@ class Feed extends Component {
               }
             })}
         </div>
+
+        {/* <div>
+        {feed &&
+            feed.map((item, index) => {
+             
+                return (
+                  <Card key={item._id}>
+                    <FeedItem
+                      id={item._id}
+                      author='Martin'
+                      category={item.category}
+                      dateTime={item.dateCreated}
+                      content={item.content}
+                    />
+                  </Card>
+                );
+            
+            })}
+        </div> */}
+       
       </div>
     );
   }
