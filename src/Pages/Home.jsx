@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css';
+import { Link} from "react-router-dom";
 
 class Home extends Component {
 
@@ -17,10 +18,12 @@ class Home extends Component {
         <div className='menu-wrapper'>
           {this.state.items.map((item, index) => {
             return (
+              <Link to={item.route}>
               <span  key={item.id} className='grid5 circle-wrapper'>
                 <div className='circle center'><img  className='circleImg' src={'icons/white/' + item.img +'.png'}/></div>
                 <div className='Link'>{item.name}</div>
               </span >
+              </Link>
             );
           })}
         </div>
