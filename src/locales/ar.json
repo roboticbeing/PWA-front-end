@@ -1,19 +1,21 @@
 {
-    "Login": {
-        "username": "العضو:",
-        "password": "كلمة المرور:",
-        "login": "تسجيل الدخول:"
-    },
-    "Register": {
-        "email": "البريد الإلكتروني:",
-        "fullname": "الاسم الكامل:",
-        "password": "كلمة المرور:",
-        "confirmpassword": "تأكيد كلمة المرور:"
-    },
-    "Home": {
-        "home": "منزل"
-    },
-    "Contact": {
-        "contact": "تحول"
-    }
+    "username": "العضو:",
+    "password": "كلمة المرور:",
+    "login": "تسجيل الدخول:",
+    "register": "إشترك",
+    "email": "البريد الإلكتروني:",
+    "fullname": "الاسم الكامل:",
+    "confirmpassword": "تأكيد كلمة المرور:",
+    "home": "منزل",
+    "contact": "تحول",
+    "menu": "قائمة الطعام",
+    "feed": "أخبارعلف",
+    "news": "أخبار",
+    "announcements": "إعلانات",
+    "notices": "إخطارات",
+    "events": "أحداث",
+    "alerts": "تحذيرات",
+    "location": "موقع",
+    "emergency": "الطوارئ",
+    "people-list": "قائمة الشعب"
 }

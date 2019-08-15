@@ -1,19 +1,21 @@
 {
-    "Login": {
-        "username": "User Name:",
-        "password": "Password:",
-        "login": "Log In:"
-    },
-    "Register": {
-        "email": "Email:",
-        "fullname": "Full Name:",
-        "password": "Password:",
-        "confirmpassword": "Confirm Password:"
-    },
-    "Home": {
-        "home": "Home"
-    },
-    "Contact": {
-        "contact": "Contact"
-    }
+    "username": "User Name:",
+    "password": "Password:",
+    "login": "Log In:",
+    "register": "Register",
+    "email": "Email:",
+    "fullname": "Full Name:",
+    "confirmpassword": "Confirm Password:",
+    "home": "Home",
+    "contact": "Contact",
+    "menu": "Menu",
+    "feed": "Feed",
+    "news": "News",
+    "announcements": "Announcements",
+    "notices": "Notices",
+    "events": "Events",
+    "alerts": "Alerts",
+    "location": "Location",
+    "emergency": "Emergency",
+    "people-list": "People-List"
 }
