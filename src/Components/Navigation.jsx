@@ -79,7 +79,6 @@ class Navigation extends Component {
     let a = [];
 
     const { isAuthenticated } = this.props;
-    console.log();
 
     // Add css to "Menu burger"
     if (item.isBurger) {
