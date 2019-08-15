@@ -43,8 +43,8 @@ export default class api {
 
         this.useraccountsMe       = new apiPath('useraccounts/me/', this.config.testDomain)
         this.useraccounts         = new apiPath('useraccounts/', this.config.testDomain)
-        //activate?
-        this.useraccountsActive   = new apiPath('useraccounts/active/', this.config.testDomain)
+        
+        this.useraccountsActivate   = new apiPath('useraccounts/activate/', this.config.testDomain)
         this.useraccountsRegister = new apiPath('useraccounts/register/', this.config.testDomain)
         this.useraccountsLogin    = new apiPath('useraccounts/login/', this.config.testDomain)
 

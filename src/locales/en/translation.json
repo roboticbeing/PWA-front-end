@@ -1,7 +1,8 @@
 {
   "username": "User Name:",
   "password": "Password:",
-  "login": "Log In:",
+  "login": "Login",
+  "logout": "Logout",
   "register": "Register",
   "email": "Email:",
   "fullname": "Full Name:",

@@ -1,7 +1,8 @@
 {
   "username": "User:",
   "password": "Adgangskode:",
-  "login": "Log på:",
+  "login": "Log på",
+  "logout": "Log ud",
   "register": "Tilmeld",
   "email": "Email:",
   "fullname": "Fulde navn:",
