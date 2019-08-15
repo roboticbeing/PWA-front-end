@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import i18next from 'i18next';
 import { db } from '../routes';
 
 class Login extends Component {
@@ -39,10 +40,10 @@ class Login extends Component {
     } else {
       return (
         <div>
-          <h1>Login</h1>
+          <h1>{i18next.t('login')}</h1>
           <form onSubmit={this.handleSubmit}>
             <label>
-              User Name:
+              {i18next.t('username')}
               <input
                 type='text'
                 name='userName'
@@ -52,7 +53,7 @@ class Login extends Component {
 
             <br />
             <label>
-              Password:
+              {i18next.t('password')}
               <input
                 type='password'
                 name='Password'
@@ -61,7 +62,7 @@ class Login extends Component {
             </label>
             <br />
             <button type='submit' className='btn btn-primary'>
-              Log In
+              {i18next.t('login')}
             </button>
           </form>
         </div>

@@ -16,7 +16,6 @@ import Feed from './Pages/Feed';
 import Location from './Pages/Location';
 import PeopleList from './Pages/PeopleList';
 
-import About from './Pages/About';
 import Contact from './Pages/Contact';
 import FAQ from './Pages/FAQ';
 import ImportantLocations from './Pages/ImportantLocations';
@@ -60,7 +59,6 @@ const Router = () =>  {
             <Route path="/feed" component={RequireAuthentication(Feed)} />
 
             {/* Sophie's paths */}
-            <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/faq" component={FAQ} />
             <Route path="/important-locations" component={ImportantLocations} />
