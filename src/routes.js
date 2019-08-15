@@ -37,6 +37,7 @@ const Router = () =>  {
     return (
       <BrowserRouter>
         <div>
+        <div className='lang-footer'>DA | EN | AR</div>
         <Navigation />
           <Switch>
 
@@ -71,6 +72,7 @@ const Router = () =>  {
             <Route path="/components-overview" component={RequireAuthentication(ComponentsOverview)} />
 
           </Switch>
+          
         </div>
       </BrowserRouter>
     );

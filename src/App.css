@@ -407,3 +407,16 @@ ul.topnav li.right {float: right;}
   width: 100%;
   margin: 16px 0px 8px;
 }
+
+
+/*---------------------------------------------------------*/
+
+.lang-footer{
+  background-color:rgb(29, 29, 29);
+  width: 100%;
+  height: 36px;
+  color:grey;
+  text-align: right;
+  padding-right:20px;
+  padding-top:4px;
+}
