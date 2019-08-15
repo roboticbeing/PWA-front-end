@@ -155,6 +155,15 @@ class Navigation extends Component {
         id: 11
       },
       {
+        name: 'Logout',
+        route: '/logout',
+        authRoute: true,
+        isBurger: false,
+        showAllways: false,
+        css: '',
+        id: 27
+      },
+      {
         name: 'News',
         route: '/news',
         authRoute: true,

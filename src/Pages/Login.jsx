@@ -36,7 +36,7 @@ class Login extends Component {
     const { renderRedirect } = this.state;
 
     if (renderRedirect) {
-      return <Redirect to='/location' />;
+      return <Redirect to='/feed' />;
     } else {
       return (
         <div>

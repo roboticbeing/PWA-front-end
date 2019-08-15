@@ -161,6 +161,11 @@ export default class apiMethods {
                 .catch(() => {return false})
     }
 
+    unauth() {
+        apiAuth.setAuthorizationToken();
+        store.dispatch({type:actionTypes.LOGOUT});
+    }
+
 
     me(){
         let www = 'useraccounts/me/'
