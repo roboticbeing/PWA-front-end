@@ -11,12 +11,13 @@ import Register from './Pages/Register';
 import AccountActivation from './Pages/AccountActivation';
 import Settings from './Pages/Settings';
 
-import Alerts from './Pages/Push';
-import Emergency from './Pages/EmergencyContact';
+import Push from './Pages/Push';
+import EmergencyContact from './Pages/EmergencyContact';
 import Feed from './Pages/Feed';
-import Location from './Pages/Geolocation';
+import Geolocation from './Pages/Geolocation';
 import PeopleList from './Pages/PeopleList';
 
+import About from './Pages/About';
 import Contact from './Pages/Contact';
 import FAQ from './Pages/FAQ';
 import ImportantLocations from './Pages/ImportantLocations';
