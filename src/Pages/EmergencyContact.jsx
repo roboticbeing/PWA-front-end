@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-class Location extends Component {
+class EmergencyContact extends Component {
   render () {
     return ( 
     
     <div >
-      Location
+      EmergencyContact
     </div>
     
     );
   }
 }
 
-export default Location;
+export default EmergencyContact;

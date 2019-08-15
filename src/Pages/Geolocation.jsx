@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-class Emergency extends Component {
+class Geolocation extends Component {
   render () {
     return ( 
     
     <div >
-      Emergency
+      Geolocation
     </div>
     
     );
   }
 }
 
-export default Emergency;
+export default Geolocation;
