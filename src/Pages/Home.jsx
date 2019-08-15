@@ -64,7 +64,7 @@ class Home extends Component {
         id: 12,
       },
       {
-        name: 'Contact Us',
+        name: 'Contact',
         route: '/contact',
         authRoute: false,
         isBurger: false,

@@ -17,5 +17,14 @@
     "alerts": "تحذيرات",
     "location": "موقع",
     "emergency": "الطوارئ",
-    "people-list": "قائمة الشعب"
+    "people-list": "قائمة الشعب",
+    "safety-tips": "نصائح السلامة",
+    "medical-needs": "الاحتياجات الطبية",
+    "faq": "التعليمات",
+    "laws": "القوانين والتقاليد",
+    "about": "حول",
+    "important-locations":"مواقع مهمة",
+    "overnight":"ليال",
+    "language-barriers": "الحواجز اللغوية",
+    "theft": "حالات السرقة"
 }

@@ -17,5 +17,16 @@
     "alerts": "Alerts",
     "location": "Location",
     "emergency": "Emergency",
-    "people-list": "People-List"
+    "people-list": "People-List",
+    "safety-tips": "Safety Tips",
+    "medical-needs": "Medical Needs",
+    "faq": "FAQ",
+    "laws": "Laws and Traditions",
+    "about": "About Us",
+    "important-locations":"Important Locations",
+    "overnight":"Overnight Stays",
+    "language-barriers": "Language Barriers",
+    "theft": "Theft Cases"
+
+    
 }
