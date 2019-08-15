@@ -12,9 +12,9 @@ import AccountActivation from './Pages/AccountActivation';
 import Settings from './Pages/Settings';
 
 import Alerts from './Pages/Alerts';
-import Emergency from './Pages/Emergency';
+import Emergency from './Pages/EmergencyContact';
 import Feed from './Pages/Feed';
-import Location from './Pages/Location';
+import Location from './Pages/Geolocation';
 import PeopleList from './Pages/PeopleList';
 
 import Contact from './Pages/Contact';
@@ -52,9 +52,9 @@ const Router = () =>  {
 
             <Route path="/settings" component={RequireAuthentication(Settings)} />
 
-            <Route path="/location" component={RequireAuthentication(Location)} />
-            <Route path="/emergency" component={RequireAuthentication(Emergency)} />
-            <Route path="/alerts" component={RequireAuthentication(Alerts)} />
+            <Route path="/geolocation" component={RequireAuthentication(Location)} />
+            <Route path="/emergency-contact" component={RequireAuthentication(Emergency)} />
+            <Route path="/push" component={RequireAuthentication(Alerts)} />
             <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
             {/* Inbound Communication (news, announcements) */}
             <Route path="/feed" component={RequireAuthentication(Feed)} />
@@ -68,7 +68,7 @@ const Router = () =>  {
             <Route path="/medical" component={Medical} />
             <Route path="/overnight" component={Overnight} />
             <Route path="/safety" component={Safety} />
-            <Route path="theft" component={Theft} />
+            <Route path="/theft" component={Theft} />
 
             <Route path="/components-overview" component={RequireAuthentication(ComponentsOverview)} />
 

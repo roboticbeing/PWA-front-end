@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Link} from "react-router-dom";
 
 class Home extends Component {
   render() {
@@ -10,16 +11,12 @@ class Home extends Component {
         <div className='menu-wrapper'>
           {this.state.items.map((item, index) => {
             return (
-              <span key={item.id} className='grid5 circle-wrapper'>
-                <div className='circle center'>
-                  <img
-                    className='circleImg'
-                    alt='circle'
-                    src={'icons/white/' + item.img + '.png'}
-                  />
-                </div>
+              <Link to={item.route}>
+              <span  key={item.id} className='grid5 circle-wrapper'>
+                <div className='circle center'><img  className='circleImg' src={'icons/white/' + item.img +'.png'}/></div>
                 <div className='Link'>{item.name}</div>
-              </span>
+              </span >
+              </Link>
             );
           })}
         </div>
@@ -46,8 +43,8 @@ class Home extends Component {
       (this.props.auth === true ? true : false),
     items: [
       {
-        name: 'Charity',
-        route: '/charity',
+        name: 'Safety Tips',
+        route: '/safety',
         authRoute: false,
         isBurger: false,
         showAllways: false,
@@ -56,8 +53,8 @@ class Home extends Component {
         id: 12
       },
       {
-        name: 'Email',
-        route: '/email',
+        name: 'Contact',
+        route: '/contact',
         authRoute: false,
         isBurger: false,
         showAllways: false,
@@ -66,8 +63,8 @@ class Home extends Component {
         id: 11
       },
       {
-        name: 'Heart',
-        route: '/heart',
+        name: 'Medical Needs',
+        route: '/medical',
         authRoute: false,
         isBurger: false,
         showAllways: false,
@@ -76,8 +73,8 @@ class Home extends Component {
         id: 20
       },
       {
-        name: 'Help',
-        route: '/help',
+        name: 'FAQ',
+        route: '/faq',
         authRoute: true,
         isBurger: false,
         showAllways: false,
@@ -86,8 +83,8 @@ class Home extends Component {
         id: 21
       },
       {
-        name: 'Libra',
-        route: '/libra',
+        name: 'Laws and Traditions',
+        route: '/laws-traditions',
         authRoute: true,
         isBurger: false,
         showAllways: false,
@@ -96,8 +93,8 @@ class Home extends Component {
         id: 22
       },
       {
-        name: 'Man User',
-        route: '/man-user',
+        name: 'About Us',
+        route: '/about',
         authRoute: true,
         isBurger: false,
         showAllways: false,
@@ -106,8 +103,8 @@ class Home extends Component {
         id: 23
       },
       {
-        name: 'Location',
-        route: '/map-location',
+        name: 'Important Locations',
+        route: '/important-locations',
         authRoute: true,
         isBurger: false,
         showAllways: false,
@@ -116,8 +113,8 @@ class Home extends Component {
         id: 24
       },
       {
-        name: 'Slumber',
-        route: '/slumber',
+        name: 'Overnight Stays',
+        route: '/overnight',
         authRoute: true,
         isBurger: false,
         showAllways: false,
@@ -126,8 +123,8 @@ class Home extends Component {
         id: 25
       },
       {
-        name: 'speaking',
-        route: '/speaking',
+        name: 'Language Barriers',
+        route: '/language-barriers',
         authRoute: false,
         isBurger: false,
         showAllways: true,
@@ -136,8 +133,8 @@ class Home extends Component {
         id: 26
       },
       {
-        name: 'Thief',
-        route: '/thief',
+        name: 'Theft Cases',
+        route: '/theft',
         authRoute: false,
         isBurger: false,
         showAllways: true,

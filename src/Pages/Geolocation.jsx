@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import i18next from 'i18next';
 import { withTranslation } from 'react-i18next';
 
-class Push extends Component {
+class Geolocation extends Component {
   render () {
     return ( 
-
-    <div >
-       return <div>{i18next.t('alerts')}</div>;
-    </div>
+    
+      <div>{i18next.t('geolocation')}</div>
     
     );
   }
 }
 
-export default withTranslation()(Push);;
+export default withTranslation()(Geolocation);
