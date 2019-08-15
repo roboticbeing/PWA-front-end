@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { db } from '../routes';
 import Card from '../Components/Card';
 import FeedItem from '../Components/FeedItem';
@@ -18,7 +20,7 @@ class Feed extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-//Get All Active Feed
+  //Get All Active Feed
   componentDidMount() {
     db.feedActive.getAll();
   }
@@ -40,58 +42,55 @@ class Feed extends Component {
 
     return (
       <div>
-        {/* <div>Feed</div> */}
+        <div>{i18next.t('feed')}</div>
         <div className='feed-wrapper'>
+          <div>
+            <input
+              onChange={this.handleChange}
+              id='news'
+              type='checkbox'
+              checked={this.state.filter.news}
+            />
+            <label htmlFor='news'>{i18next.t('news')}</label>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              id='announcements'
+              type='checkbox'
+              checked={this.state.filter.announcements}
+            />
+            <label htmlFor='announcements'>{i18next.t('announcements')}</label>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              id='notices'
+              type='checkbox'
+              checked={this.state.filter.notices}
+            />
+            <label htmlFor='notices'>{i18next.t('notices')}</label>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              id='events'
+              type='checkbox'
+              checked={this.state.filter.events}
+            />
+            <label htmlFor='events'>{i18next.t('events')}</label>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              id='alerts'
+              type='checkbox'
+              checked={this.state.filter.alerts}
+            />
+            <label htmlFor='alerts'>{i18next.t('alerts')}</label>
+          </div>
 
-        <div>
-          <input
-            onChange={this.handleChange}
-            id='news'
-            type='checkbox'
-            checked={this.state.filter.news}
-          />
-          <label htmlFor='news'>News</label>
-        </div>
-        <div>
-          <input
-            onChange={this.handleChange}
-            id='announcements'
-            type='checkbox'
-            checked={this.state.filter.announcements}
-          />
-          <label htmlFor='announcements'>Announcements</label>
-        </div>
-        <div>
-          <input
-            onChange={this.handleChange}
-            id='notices'
-            type='checkbox'
-            checked={this.state.filter.notices}
-          />
-          <label htmlFor='notices'>Notices</label>
-        </div>
-        <div>
-          <input
-            onChange={this.handleChange}
-            id='events'
-            type='checkbox'
-            checked={this.state.filter.events}
-          />
-          <label htmlFor='events'>Events</label>
-        </div>
-        <div>
-          <input
-            onChange={this.handleChange}
-            id='alerts'
-            type='checkbox'
-            checked={this.state.filter.alerts}
-          />
-          <label htmlFor='alerts'>Alerts</label>
-        </div>
-        
-        <div>
-
-        </div>
+          <div />
           {feed &&
             feed.map((item, index) => {
               if (filter[item.category]) {
@@ -123,4 +122,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Feed);
+export default connect(mapStateToProps)(withTranslation()(Feed));

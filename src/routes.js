@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
+import LanguageSelector from './Components/LanguageSelector';
 import Navigation from './Components/Navigation';
 
 import Login from './Pages/Login';
@@ -11,12 +12,11 @@ import AccountActivation from './Pages/AccountActivation';
 import Settings from './Pages/Settings';
 
 import Alerts from './Pages/Alerts';
-import Emergency from './Pages/Emergency';
+import Emergency from './Pages/EmergencyContact';
 import Feed from './Pages/Feed';
-import Location from './Pages/Location';
+import Location from './Pages/Geolocation';
 import PeopleList from './Pages/PeopleList';
 
-import About from './Pages/About';
 import Contact from './Pages/Contact';
 import FAQ from './Pages/FAQ';
 import ImportantLocations from './Pages/ImportantLocations';
@@ -38,7 +38,7 @@ const Router = () =>  {
     return (
       <BrowserRouter>
         <div>
-        <div className='lang-footer'>DA | EN | AR</div>
+        <LanguageSelector />
         <Navigation />
           <Switch>
 
@@ -52,15 +52,14 @@ const Router = () =>  {
 
             <Route path="/settings" component={RequireAuthentication(Settings)} />
 
-            <Route path="/location" component={RequireAuthentication(Location)} />
-            <Route path="/emergency" component={RequireAuthentication(Emergency)} />
-            <Route path="/alerts" component={RequireAuthentication(Alerts)} />
+            <Route path="/geolocation" component={RequireAuthentication(Location)} />
+            <Route path="/emergency-contact" component={RequireAuthentication(Emergency)} />
+            <Route path="/push" component={RequireAuthentication(Alerts)} />
             <Route path="/people-list" component={RequireAuthentication(PeopleList)} />
             {/* Inbound Communication (news, announcements) */}
             <Route path="/feed" component={RequireAuthentication(Feed)} />
 
             {/* Sophie's paths */}
-            <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/faq" component={FAQ} />
             <Route path="/important-locations" component={ImportantLocations} />

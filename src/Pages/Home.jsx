@@ -1,15 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import '../App.css';
 import { Link} from "react-router-dom";
 
 class Home extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-
-
   render() {
     let itemRender = null;
 
@@ -30,23 +23,19 @@ class Home extends Component {
       );
     }
 
-    return ( 
-    
-    <div className='home'>
-       <div className='home-header'><img src='img/moves_logo_large_white.png'/></div>
-       <div className='home-item'>
-        
-            {itemRender}
-         
-       </div>
-    </div>
-    
+    return (
+      <div className='home'>
+        <div className='home-header'>
+          <img alt='moves people' src='img/moves_logo_large_white.png' />
+        </div>
+        <div className='home-item'>{itemRender}</div>
+      </div>
     );
   }
 
   // State -------------------------------
   // State -------------------------------
-   state = {
+  state = {
     showMobileMenu: false,
     activeId: null,
     auth:
@@ -60,8 +49,8 @@ class Home extends Component {
         isBurger: false,
         showAllways: false,
         css: '',
-        img:'charity',
-        id: 12,
+        img: 'charity',
+        id: 12
       },
       {
         name: 'Contact',
@@ -70,7 +59,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: false,
         css: '',
-        img:'email',
+        img: 'email',
         id: 11
       },
       {
@@ -80,7 +69,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: false,
         css: '',
-        img:'heart',
+        img: 'heart',
         id: 20
       },
       {
@@ -90,7 +79,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: false,
         css: '',
-        img:'help',
+        img: 'help',
         id: 21
       },
       {
@@ -100,7 +89,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: false,
         css: '',
-        img:'libra',
+        img: 'libra',
         id: 22
       },
       {
@@ -110,7 +99,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: false,
         css: '',
-        img:'man-user',
+        img: 'man-user',
         id: 23
       },
       {
@@ -120,7 +109,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: false,
         css: '',
-        img:'map-location',
+        img: 'map-location',
         id: 24
       },
       {
@@ -130,7 +119,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: false,
         css: '',
-        img:'slumber',
+        img: 'slumber',
         id: 25
       },
       {
@@ -140,7 +129,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: true,
         css: '',
-        img:'speaking',
+        img: 'speaking',
         id: 26
       },
       {
@@ -150,7 +139,7 @@ class Home extends Component {
         isBurger: false,
         showAllways: true,
         css: '',
-        img:'thief',
+        img: 'thief',
         id: 26
       }
     ]

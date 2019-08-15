@@ -3,7 +3,7 @@ import * as actionTypes from '../actions';
 const initialState = {
     feed: null,
     feedTimestamp: null,
-    isAuthenticated: false,
+    isAuthenticated: false
 };
 
 const reducer = ( state = initialState, action ) => {
