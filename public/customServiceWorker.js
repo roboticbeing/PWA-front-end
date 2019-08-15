@@ -14,6 +14,7 @@ const CACHE_NAME = 'static-cache-v10';
 const FILES_TO_CACHE = [
                         '/',
                         '/src/index.html',
+                        '/src/index.js',
                         '/src/App.js',
                         '/src/App.css',
                         'favicon.ico',
