@@ -40,7 +40,7 @@ class Feed extends Component {
 
     return (
       <div>
-        <div>Feed</div>
+        {/* <div>Feed</div> */}
         <div className='feed-wrapper'>
 
         <div>
@@ -111,25 +111,6 @@ class Feed extends Component {
               }
             })}
         </div>
-
-        {/* <div>
-        {feed &&
-            feed.map((item, index) => {
-             
-                return (
-                  <Card key={item._id}>
-                    <FeedItem
-                      id={item._id}
-                      author='Martin'
-                      category={item.category}
-                      dateTime={item.dateCreated}
-                      content={item.content}
-                    />
-                  </Card>
-                );
-            
-            })}
-        </div> */}
        
       </div>
     );
