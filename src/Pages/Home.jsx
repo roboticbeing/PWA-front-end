@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 import i18next from 'i18next';
 import { withTranslation } from 'react-i18next';
 
@@ -13,11 +13,17 @@ class Home extends Component {
         <div className='menu-wrapper'>
           {this.state.items.map((item, index) => {
             return (
-              <Link to={item.route}>
-              <span  key={item.id} className='grid5 circle-wrapper'>
-                <div className='circle center'><img  className='circleImg' src={'icons/white/' + item.img +'.png'}/></div>
-                <div className='Link'>{item.name}</div>
-              </span >
+              <Link to={item.route} key={item.id}>
+                <span key={item.id} className='grid5 circle-wrapper'>
+                  <div className='circle center'>
+                    <img
+                      className='circleImg'
+                      alt='circle'
+                      src={'icons/white/' + item.img + '.png'}
+                    />
+                  </div>
+                  <div className='Link'>{item.name}</div>
+                </span>
               </Link>
             );
           })}
@@ -45,7 +51,7 @@ class Home extends Component {
       (this.props.auth === true ? true : false),
     items: [
       {
-        name: i18next.t('safety-tips'),
+        name: `${i18next.t('safety-tips')}`,
         route: '/safety',
         authRoute: false,
         isBurger: false,
@@ -55,7 +61,7 @@ class Home extends Component {
         id: 12
       },
       {
-        name: i18next.t('contact'),
+        name: `${i18next.t('contact')}`,
         route: '/contact',
         authRoute: false,
         isBurger: false,
@@ -65,7 +71,7 @@ class Home extends Component {
         id: 11
       },
       {
-        name: i18next.t('medical-needs'),
+        name: `${i18next.t('medical-needs')}`,
         route: '/medical',
         authRoute: false,
         isBurger: false,
@@ -75,7 +81,7 @@ class Home extends Component {
         id: 20
       },
       {
-        name: i18next.t('faq'),
+        name: `${i18next.t('faq')}`,
         route: '/faq',
         authRoute: true,
         isBurger: false,
@@ -85,7 +91,7 @@ class Home extends Component {
         id: 21
       },
       {
-        name: i18next.t('laws'),
+        name: `${i18next.t('about')}`,
         route: '/laws-traditions',
         authRoute: true,
         isBurger: false,
@@ -95,7 +101,7 @@ class Home extends Component {
         id: 22
       },
       {
-        name: i18next.t('about'),
+        name: `${i18next.t('about')}`,
         route: '/about',
         authRoute: true,
         isBurger: false,
@@ -105,7 +111,7 @@ class Home extends Component {
         id: 23
       },
       {
-        name: i18next.t('important-locations'),
+        name: `${i18next.t('important-locations')}`,
         route: '/important-locations',
         authRoute: true,
         isBurger: false,
@@ -115,7 +121,7 @@ class Home extends Component {
         id: 24
       },
       {
-        name: i18next.t('overnight'),
+        name: `${i18next.t('overnight')}`,
         route: '/overnight',
         authRoute: true,
         isBurger: false,
@@ -125,7 +131,7 @@ class Home extends Component {
         id: 25
       },
       {
-        name: i18next.t('language-barriers'),
+        name: `${i18next.t('language-barriers')}`,
         route: '/language-barriers',
         authRoute: false,
         isBurger: false,
@@ -135,14 +141,14 @@ class Home extends Component {
         id: 26
       },
       {
-        name: i18next.t('theft'),
+        name: `${i18next.t('theft')}`,
         route: '/theft',
         authRoute: false,
         isBurger: false,
         showAllways: true,
         css: '',
         img: 'thief',
-        id: 26
+        id: 27
       }
     ]
   };
