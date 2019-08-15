@@ -121,7 +121,7 @@ class Navigation extends Component {
       (this.props.auth === true ? true : false),
     items: [
       {
-        name: '☰' + `${i18next.t('menu')}`,
+        name: `☰  ${i18next.t('menu')}`,
         authRoute: false,
         route: '#',
         isBurger: true,
@@ -156,7 +156,7 @@ class Navigation extends Component {
         css: '',
         id: 11
       },
-     
+
       {
         name: `${i18next.t('location')}`,
         route: '/geolocation',
@@ -175,7 +175,7 @@ class Navigation extends Component {
         css: '',
         id: 22
       },
-  
+
       {
         name: `${i18next.t('push')}`,
         route: '/push',
@@ -220,7 +220,7 @@ class Navigation extends Component {
         showAllways: false,
         css: '',
         id: 27
-      },
+      }
     ]
   };
 

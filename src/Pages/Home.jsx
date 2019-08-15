@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 import i18next from 'i18next';
 import { withTranslation } from 'react-i18next';
 
@@ -13,11 +13,17 @@ class Home extends Component {
         <div className='menu-wrapper'>
           {this.state.items.map((item, index) => {
             return (
-              <Link to={item.route}>
-              <span  key={item.id} className='grid5 circle-wrapper'>
-                <div className='circle center'><img  className='circleImg' src={'icons/white/' + item.img +'.png'}/></div>
-                <div className='Link'>{item.name}</div>
-              </span >
+              <Link to={item.route} key={item.id}>
+                <span key={item.id} className='grid5 circle-wrapper'>
+                  <div className='circle center'>
+                    <img
+                      className='circleImg'
+                      alt='circle'
+                      src={'icons/white/' + item.img + '.png'}
+                    />
+                  </div>
+                  <div className='Link'>{item.name}</div>
+                </span>
               </Link>
             );
           })}
@@ -142,7 +148,7 @@ class Home extends Component {
         showAllways: true,
         css: '',
         img: 'thief',
-        id: 26
+        id: 27
       }
     ]
   };
