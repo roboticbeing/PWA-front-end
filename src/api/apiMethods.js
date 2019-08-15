@@ -116,7 +116,6 @@ export default class apiMethods {
             ]
         }
     
-        let that = this
         axios.post(this.axiosConfig.defaults.baseURL + this.endpoint, data, this.axiosConfig)
         .then(res => {
             console.log(res)
@@ -168,7 +167,6 @@ export default class apiMethods {
 
 
     me(){
-        let www = 'useraccounts/me/'
 
         axios.get('https://polar-peak-16816.herokuapp.com/api/useraccounts/me/')
         .then(res => {

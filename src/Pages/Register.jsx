@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import i18next from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { db } from '../routes';
 
 class Register extends Component {
@@ -26,10 +28,10 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <h1>Register</h1>
+        <h1>{i18next.t('register')}</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Email:
+            {i18next.t('email')}
             <input
               type='text'
               name='userName'
@@ -38,7 +40,7 @@ class Register extends Component {
           </label>
           <br />
           <label>
-            Full Name:
+            {i18next.t('fullname')}
             <input
               type='text'
               name='fullName'
@@ -47,7 +49,7 @@ class Register extends Component {
           </label>
           <br />
           <label>
-            Password:
+            {i18next.t('password')}
             <input
               type='password'
               name='Password'
@@ -56,7 +58,7 @@ class Register extends Component {
           </label>
           <br />
           <label>
-            Confirm Password:
+            {i18next.t('confirmpassword')}
             <input
               type='password'
               name='confirmPassword'
@@ -65,7 +67,7 @@ class Register extends Component {
           </label>
           <br />
           <button type='submit' className='btn btn-primary'>
-            Register
+            {i18next.t('register')}
           </button>
         </form>
       </div>
@@ -73,4 +75,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default withTranslation()(Register);

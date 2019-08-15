@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
+import LanguageSelector from './Components/LanguageSelector';
 import Navigation from './Components/Navigation';
 
 import Login from './Pages/Login';
@@ -16,7 +17,6 @@ import Feed from './Pages/Feed';
 import Location from './Pages/Location';
 import PeopleList from './Pages/PeopleList';
 
-import About from './Pages/About';
 import Contact from './Pages/Contact';
 import FAQ from './Pages/FAQ';
 import ImportantLocations from './Pages/ImportantLocations';
@@ -38,7 +38,7 @@ const Router = () =>  {
     return (
       <BrowserRouter>
         <div>
-        <div className='lang-footer'>DA | EN | AR</div>
+        <LanguageSelector />
         <Navigation />
           <Switch>
 
@@ -60,7 +60,6 @@ const Router = () =>  {
             <Route path="/feed" component={RequireAuthentication(Feed)} />
 
             {/* Sophie's paths */}
-            <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/faq" component={FAQ} />
             <Route path="/important-locations" component={ImportantLocations} />
